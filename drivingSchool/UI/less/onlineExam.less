@@ -1,0 +1,53 @@
+﻿@import "variable";
+@import "style";
+@color: rgb(0, 23, 39);
+
+body {
+    text-shadow: rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 2px;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: @textPrimaryColor;
+    background-image: @bg-header;
+
+    .content-header {
+        min-height: 210px;
+        margin-left: -240px;
+        padding: 20px 16px 5px 256px;
+        background-image: @bg-content-header;
+        text-align: center;
+        font-family: @font-custom;
+        letter-spacing: 6px;
+        color: rgb(247, 247, 247);
+        text-shadow: rgb(160, 156, 155) 0px 0px 1px, rgb(209, 209, 207) 0px 0px 1px, rgb(214, 214, 212) 0px 0px 2px;
+
+        .subtitle {
+            padding-top: 35px;
+            font-size: 30px;
+        }
+
+        .mainTitle {
+            font-size: 45px;
+            padding-top: 20px;
+        }
+    }
+}
+
+#header {
+    -webkit-tranform: translateZ(0);
+    -webkit-transition-duration: 0.05s;
+    transition-duration: 0.05s;
+    -moz-tranform: translateZ(0);
+    color: #f3f3f3;
+    text-shadow: -1px -1px 1px rgb(165, 163, 163), 2px 2px 1px #999595;
+}
+#main{
+    margin-top:230px;
+    position: relative;
+    left:30%;
+}
+

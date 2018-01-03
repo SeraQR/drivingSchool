@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../../Data/img/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>驾校管理系统</title>
+    <link rel="stylesheet/less" type="text/css" href="../less/sendMessage.less" />
+    <script src="../../Data/js/less.js"></script>
+</head>
+
+<body>
+    <div class="wrap" id="sendMessageWrap">
+        <a class="backLogin" href="javascript:history.back();">返回</a>
+        <br>
+        <span id="tip">&nbsp;</span>
+        <br>
+        <br>
+
+        <h2 class="title">预约教练</h2>
+        <div class="drop">
+            <div class="option active placeholder" data-value="placeholder">
+                请选择一位教练
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <span class="input input--hoshi">
+            <input class="input__field input__field--hoshi" type="text" id="message" />
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="message">
+                <span id="tipMessage" class="input__label-content input__label-content--hoshi">请输入您的预约消息</span>
+            </label>
+        </span>
+        <br>
+        <br>
+        <br>
+
+
+        <a id="send" class="button button-3d button-primary button-rounded">发送</a>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+    </div>
+    <script src="../../Data/js/jQuery.js"></script>
+
+    <script src="../../Data/js/babel.js"></script>
+    <script type="text/babel" src="../../BLL/js/sendMessage.js">
+    </script>
+</body>
+
+</html>
