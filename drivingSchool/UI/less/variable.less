@@ -53,7 +53,7 @@ sans-serif;
     }
 }
 
-.hoverLine(@color:#2094c4) {
+.hoverLine(@color: #2094c4) {
     position: relative;
     display: inline-block;
     &::after {
@@ -463,6 +463,12 @@ sans-serif;
     font-size: 18px;
     font-weight: bold;
     font-family: @font-custom;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .button:visited {
@@ -1033,10 +1039,10 @@ sans-serif;
     -webkit-box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
     padding: 15px;
-    margin:25px 30px;
+    margin: 25px 30px;
     display: inline-block;
     font-size: 18px;
-    background-color:transparent;
+    background-color: transparent;
     overflow: hidden;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -1057,7 +1063,6 @@ sans-serif;
     transition-property: color;
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
-   
     &:before {
         content: "";
         position: absolute;
@@ -1091,8 +1096,6 @@ sans-serif;
     &:hover:before {
         -webkit-transform: scaleY(0);
         transform: scaleY(0);
-        
-
     }
     &:active,
     &:focus,
@@ -1118,19 +1121,15 @@ sans-serif;
     }
 }
 
-
-
 @-webkit-keyframes hvr-bob-float {
     100% {
         -webkit-transform: translateY(-6px);
-        
     }
 }
 
 @keyframes hvr-bob-float {
     100% {
         -webkit-transform: translateY(-6px);
-        
     }
 }
 
@@ -1140,7 +1139,6 @@ sans-serif;
         transform: translateY(-6px);
     }
     50% {
-        
         -webkit-transform: translateY(-2px);
         transform: translateY(-2px)
     }
@@ -1157,7 +1155,6 @@ sans-serif;
         transform: translateY(-6px);
     }
     50% {
-        
         -webkit-transform: translateY(-2px);
         transform: translateY(-2px)
     }

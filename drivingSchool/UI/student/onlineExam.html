@@ -35,21 +35,47 @@
                 </div>
             </div>
         </header>
+        <div class="Leaderboards">
+            <div class="old">最高答对
+                <span id="oldTureNum"></span> 道</div>
+            <br>
+            <div class="new">目前答对
+                <span id="nowTureNum">0</span> 道</div>
+        </div>
+        <span id="tip">&nbsp;</span>
         <div id="main">
             <div class="problem">
-                <div class="question">下长坡时，控制车速除了刹车制动以外还有什么有效的辅助方法？</div>
-                <label><input type="radio" value="" />A、踏下离合器滑行</label>
-                <label><input type="radio" value="" />B、利用发动机制动</label>
-                <label><input type="radio" value="" />C、关闭发动机熄火滑行</label>
-                <label><input type="radio" value="" />D、挂入空挡滑行</label>
+                <div class="question"></div>
+                <input type="radio" name="name" class="option_a"/>
+                <div class="option optionA"></div>
+                <input type="radio" name="name" class="option_b" />
+                <div class="option optionB"></div>
+                <input type="radio" name="name" class="option_c" />
+                <div class="option optionC"></div>
+                <input type="radio" name="name" class="option_d" />
+                <div class="option optionD"></div>
             </div>
+
+            <div class="navigation">
+                <a id="sure" class="login button button-3d button-primary button-rounded">提交答案</a>
+                <br>
+                <br>
+                <div class="prev">
+                    <div>上一题</div>
+                </div>
+                <div class="next">
+                    <div>下一题</div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-        
+
 
     <script src="../../Data/js/jQuery.js"></script>
     <script src="../../Data/js/babel.js"></script>
+    <script src="../../Data/js/exam.js"></script>
     <script type="text/babel" src="../../BLL/js/onlineExam.js">
     </script>
 </body>

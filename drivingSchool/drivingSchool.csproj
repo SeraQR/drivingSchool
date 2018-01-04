@@ -85,6 +85,7 @@
     <Content Include="BLL\js\sentMessage.js" />
     <Content Include="BLL\js\student.js" />
     <Content Include="BLL\js\studentList.js" />
+    <Content Include="Data\js\exam.js" />
     <Content Include="UI\account\changeInfo.html" />
     <Content Include="UI\account\changePwd.html" />
     <Content Include="UI\account\forgetPwd.html" />
