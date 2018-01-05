@@ -107,8 +107,7 @@ function getAffiche() {
         type: "POST",
         async: false,
         data: {
-            "type": "get",
-            "account": account
+            "type": "get"
         },
         success: result => {
             $("#affiche").text(result);

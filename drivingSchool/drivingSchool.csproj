@@ -73,6 +73,7 @@
     <Content Include="BLL\ajax\Message.ashx" />
     <Content Include="BLL\ajax\Account.ashx" />
     <None Include="packages.config" />
+    <Content Include="BLL\js\about.js" />
     <Content Include="BLL\js\changeInfo.js" />
     <Content Include="BLL\js\changePwd.js" />
     <Content Include="BLL\js\coach.js" />

@@ -70,9 +70,6 @@ $("#sendMessage").click(() => {
     sessionStorage.setItem("sender", userName);
     location.href = "sendMessage.html";
 });
-$("#onlineExam").click(() => {
-    /* 实现很难哦~ */
-});
 $("#suggestion").click(() => {
     const suggestion = prompt("非常感谢您的反馈！", "请输入您宝贵的意见");
     if (suggestion.trim() !== "") {
@@ -96,8 +93,7 @@ function getAffiche() {
         type: "POST",
         async: false,
         data: {
-            "type": "get",
-            "account": account
+            "type": "get"
         },
         success: result => {
             $("#affiche").text(result);
