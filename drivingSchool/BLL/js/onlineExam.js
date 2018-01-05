@@ -57,47 +57,22 @@ function getOldTure() {
     }
     $("#oldTureNum").text(oldTure);
 }
+$("input[type='radio']").click(addSelection);
 
-$(".option_a").change(() => {
+function addSelection() {
     if (!problem[index].submitted) {
         showTip("");
         $("input[type='radio']").removeClass("checked");
-        $(".option_a").addClass("checked");
-        if ($(".option_a").prop("checked")) {
-            answer = "A";
+        const data = this.getAttribute("data-value");
+        const I = $(`.option_${ data.toLowerCase()}`);
+        I.addClass("checked");
+
+        if (I.prop("checked")) {
+            answer = data;
         }
     }
-});
-$(".option_b").change(() => {
-    if (!problem[index].submitted) {
-        showTip("");
-        $("input[type='radio']").removeClass("checked");
-        $(".option_b").addClass("checked");
-        if ($(".option_b").prop("checked")) {
-            answer = "B";
-        }
-    }
-});
-$(".option_c").change(() => {
-    if (!problem[index].submitted) {
-        showTip("");
-        $("input[type='radio']").removeClass("checked");
-        $(".option_c").addClass("checked");
-        if ($(".option_c").prop("checked")) {
-            answer = "C";
-        }
-    }
-});
-$(".option_d").change(() => {
-    if (!problem[index].submitted) {
-        showTip("");
-        $("input[type='radio']").removeClass("checked");
-        $(".option_d").addClass("checked");
-        if ($(".option_d").prop("checked")) {
-            answer = "D";
-        }
-    }
-});
+    return false;
+}
 
 function showTip(info) {
     tip.text(info);
@@ -123,48 +98,41 @@ $("#sure").click(() => {
             }
             $("#nowTureNum").text(nowTure);
         }
-        $(".option" + problem[index].answer).css("color", "green");
+        $(`.option${ problem[index].answer}`).css("color", "green");
     }
 });
-$(".prev").click(() => {
+
+function Init() {
     showTip("");
-    answer="";
+    answer = "";
+    $("input[type='radio']").removeClass("checked");
+    $(".option").attr("style", "");
+    if (problem[index].submitted) {
+        $(`.option${ problem[index].answer}`).css("color", "green");
+        $(`.option_${ problem[index].answer.toLowerCase()}`).addClass("checked");
+        if (problem[index].isTure) {
+            showTip("恭喜您，答对了！");
+        } else {
+            showTip(problem[index].tip);
+        }
+    }
+}
+$(".prev").click(() => {
     index--;
     if (index < 0) {
         index = 0;
-    } else {
-        $("input[type='radio']").removeClass("checked");
-        $(".option").attr("style", "");
-        if (problem[index].submitted) {
-            $(".option" + problem[index].answer).css("color", "green");
-            $(".option_" + problem[index].answer.toLowerCase()).addClass("checked");
-            if (problem[index].isTure) {
-                showTip("恭喜您，答对了！");
-            } else {
-                showTip(problem[index].tip);
-            }
-        }
-        loadQuestion();
+        return;
     }
-})
+    Init();
+    loadQuestion();
+});
+
 $(".next").click(() => {
-    showTip("");
-    answer="";
     index++;
     if (index > problem.length - 1) {
         index = problem.length - 1;
-    } else {
-        $("input[type='radio']").removeClass("checked");
-        $(".option").attr("style", "");
-        if (problem[index].submitted) {
-            $(".option" + problem[index].answer).css("color", "green");
-            $(".option_" + problem[index].answer.toLowerCase()).addClass("checked");
-            if (problem[index].isTure) {
-                showTip("恭喜您，答对了！");
-            } else {
-                showTip(problem[index].tip);
-            }
-        }
-        loadQuestion();
+        return;
     }
-})
+    Init();
+    loadQuestion();
+});

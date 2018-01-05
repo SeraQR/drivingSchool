@@ -85,6 +85,14 @@
     <Content Include="BLL\js\sentMessage.js" />
     <Content Include="BLL\js\student.js" />
     <Content Include="BLL\js\studentList.js" />
+    <Content Include="Data\DB\SQL2008\drivingSchool.mdf" />
+    <Content Include="Data\DB\SQL2008\drivingSchool_log.ldf">
+      <DependentUpon>drivingSchool.mdf</DependentUpon>
+    </Content>
+    <Content Include="Data\DB\SQL2016\drivingSchool.mdf" />
+    <Content Include="Data\DB\SQL2016\drivingSchool_log.ldf">
+      <DependentUpon>drivingSchool.mdf</DependentUpon>
+    </Content>
     <Content Include="Data\js\exam.js" />
     <Content Include="UI\account\changeInfo.html" />
     <Content Include="UI\account\changePwd.html" />
@@ -162,9 +170,7 @@
     <Compile Include="Model\SuggestionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\DB\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
