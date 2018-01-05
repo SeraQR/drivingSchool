@@ -227,7 +227,7 @@ function register() {
             success: result => {
                 if (result.toLowerCase() === "true") {
                     showTip("注册", "注册成功！");
-                    setTimeout(() => location.href = "../student/main.html", 800);
+                    setTimeout(() => location.href = "../student/student.html", 800);
                 } else {
                     showTip("因不可抗因素注册失败~");
                 }

@@ -99,7 +99,7 @@ $("#changePwd").click(() => {
             success: result => {
                 if (result.toLowerCase() === "true") {
                     showTip("密码修改成功！");
-                    setTimeout(() => location.href = `../${isCoach ? "coach" : "student"}/main.html`, 800);
+                    setTimeout(() => location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`, 800);
                 } else {
                     showTip("因不可抗元素，修改失败！");
                 }

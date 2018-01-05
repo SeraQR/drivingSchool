@@ -7,7 +7,7 @@
 2. 中间层 ajax
 3. 后台 SQLServer + C# 6.0 
 4. 框架 MVC
-5. 配置 webpack（还未搭建）
+5. 配置 webpack
 6. 移动端 Pwa （还未实现）
 
 

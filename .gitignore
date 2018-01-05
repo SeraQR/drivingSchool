@@ -3,3 +3,5 @@ node_modules/
 commit.sh
 update.sh
 .vs
+/drivingSchool/public/*
+C:\Users\Simon\Desktop\drivingSchool\drivingSchool\public\

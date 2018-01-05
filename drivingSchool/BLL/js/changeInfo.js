@@ -134,7 +134,7 @@ function changeInfo() {
             success: result => {
                 if (result.toLowerCase() === "true") {
                     showTip("修改成功！");
-                    setTimeout(() => location.href = `../${user.isCoach ? "coach" : "student"}/main.html`, 800);
+                    setTimeout(() => location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`, 800);
                 } else {
                     showTip("因不可抗因素注册失败~");
                 }

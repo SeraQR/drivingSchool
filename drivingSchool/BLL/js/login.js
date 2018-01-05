@@ -30,7 +30,7 @@ $(() => {
     if (lAccount && !sessionStorage.getItem("backLogin")) {
         sessionStorage.setItem("account", lAccount);
         sessionStorage.setItem("isCoach", lIsCoach);
-        location.href = `../${lIsCoach ? "coach" : "student"}/main.html`;
+        location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`;
     } else {
         $("#loginWrap").animate({
             opacity: "1",
@@ -58,7 +58,7 @@ function Login() {
         sessionStorage.setItem("account", user.act);
         sessionStorage.setItem("isCoach", user.isCoach);
 
-        setTimeout(() => location.href = `../${user.isCoach ? "coach" : "student"}/main.html`, 800);
+        setTimeout(() => location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`, 800);
     } else {
         showTip("请输入正确的信息！");
     }
