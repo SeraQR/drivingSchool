@@ -1,0 +1,58 @@
+﻿#main {
+    position: relative;
+    margin-top: 250px;
+    .transition(.4s);
+    width: 65%;
+    height: 450px;
+    box-shadow: 0 10px 25px rgba(56, 56, 56, 0.2);
+    border-radius: 30px;
+}
+
+.body-wrap {
+    margin: 50px auto;
+    padding: 50px;
+    padding-top: 10px;
+    font-size: 20px;
+    letter-spacing: 4px;
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #greeting {
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        margin-left: 33%;
+        margin-bottom: 2%;
+        border-radius: 10px;
+        box-shadow: 0 3px 50px 2px rgba(201, 201, 201, 0.4);
+
+        a {
+            color: @accentColor;
+            display: block;
+            padding: 10px 20px;
+            .hoverAnchor(@accentColor);
+            margin-right: 10px;
+        }
+
+        #name {
+            margin-bottom: 3%;
+        }
+    }
+
+    #message {
+        width: 280px;
+        padding-left: 10%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        a {
+            color: #222;
+            .card();
+        }
+    }
+}

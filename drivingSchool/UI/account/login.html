@@ -8,7 +8,8 @@
     <meta name="renderer" content="webkit" />
     <meta name="force-rendering" content="webkit" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>驾校管理系统</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
             <span class="input input--hoshi">
                 <input class="input__field input__field--hoshi" type="password" id="password" />
                 <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="password">
-                    <span id="tipPwd" class="input__label-content input__label-content--hoshi">请输入密码，6-10位字符</span>
+                    <span id="tipPassword" class="input__label-content input__label-content--hoshi">请输入密码，6-10位字符</span>
                 </label>
             </span>
         </div>
@@ -60,6 +61,7 @@
         <br>
         <a class="tourist" href="../information/about.html">随便看看</a>
     </div>
+    <script src="../../Data/js/jQuery.js"></script>
 </body>
 
 </html>

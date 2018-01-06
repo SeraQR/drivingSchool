@@ -3,5 +3,13 @@ node_modules/
 commit.sh
 update.sh
 .vs
-/drivingSchool/public/*
-C:\Users\Simon\Desktop\drivingSchool\drivingSchool\public\
+/drivingSchool/public/js/
+/drivingSchool/public/css/
+/drivingSchool/public/acount/
+/drivingSchool/public/img/
+/drivingSchool/public/coach/
+/drivingSchool/public/student/
+/drivingSchool/public/information/
+favicon.ico
+form.bundle.js
+main.bundle.js

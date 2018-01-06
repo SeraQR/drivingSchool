@@ -1,10 +1,12 @@
 module.exports = {
-    HTMLDirs:[
+    HTMLDirs: [
         "account/login",
         "account/register",
         "account/forgetPwd",
         "account/changePwd",
         "account/changeInfo",
+        "student/sendMessage",
+
 
         "coach/coach",
         "coach/messageList",
@@ -13,17 +15,18 @@ module.exports = {
         "student/student",
         "student/coachList",
         "student/onlineExam",
-        "student/sendMessage",
         "student/sentMessage",
 
         "information/about"
     ],
-    cssPublicPath:"../",
-    imgOutputPath:"img/",
-    cssOutputPath:"./css/styles.css",
-    devServerOutputPath:"../public",
-    templatePath:"../drivingSchool/UI/",
-    jsEntryPath:"../drivingSchool/BLL/js/",
-    imgEntryPath:"../drivingSchool/drivingSchool/Data/img/",
-    outputPath:"../drivingSchool/public"
+    formChunks: ["login", "register", "forgetPwd", "changePwd", "changeInfo", "sendMessage"],
+    mainChuks:["coach","messageList","studentList","student","coachList","onlineExam","sentMessage","about"],
+    cssPublicPath: "../",
+    imgOutputPath: "/img/",
+    cssOutputPath: "css/styles.css",
+    devServerOutputPath: "../public",
+    templatePath: "../drivingSchool/UI/",
+    jsEntryPath: "../drivingSchool/BLL/js/",
+    imgEntryPath: "../drivingSchool/drivingSchool/Data/img/favicon.ico",
+    outputPath: "../drivingSchool/public"
 };

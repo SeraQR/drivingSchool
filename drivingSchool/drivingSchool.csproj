@@ -66,26 +66,61 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\drivingSchool.dll" />
+    <Content Include="bin\drivingSchool.pdb" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="BLL\ajax\Affiche.ashx" />
     <Content Include="BLL\ajax\Coach.ashx" />
     <Content Include="BLL\ajax\Student.ashx" />
     <Content Include="BLL\ajax\Suggestion.ashx" />
     <Content Include="BLL\ajax\Message.ashx" />
     <Content Include="BLL\ajax\Account.ashx" />
+    <Content Include="bin\drivingSchool.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="packages.config" />
-    <Content Include="BLL\js\about.js" />
-    <Content Include="BLL\js\changeInfo.js" />
-    <Content Include="BLL\js\changePwd.js" />
-    <Content Include="BLL\js\coach.js" />
-    <Content Include="BLL\js\coachList.js" />
-    <Content Include="BLL\js\common.js" />
-    <Content Include="BLL\js\forgetPwd.js" />
-    <Content Include="BLL\js\messageList.js" />
-    <Content Include="BLL\js\onlineExam.js" />
-    <Content Include="BLL\js\sendMessage.js" />
-    <Content Include="BLL\js\sentMessage.js" />
-    <Content Include="BLL\js\student.js" />
-    <Content Include="BLL\js\studentList.js" />
+    <Content Include="BLL\js\component\animation.js" />
+    <Content Include="BLL\js\component\event.js" />
+    <Content Include="BLL\js\component\exam.js" />
+    <Content Include="BLL\js\component\fixedHeader.js" />
+    <Content Include="BLL\js\information\about.js" />
+    <Content Include="BLL\js\account\changeInfo.js" />
+    <Content Include="BLL\js\account\changePwd.js" />
+    <Content Include="BLL\js\coach\coach.js" />
+    <Content Include="BLL\js\student\coachList.js" />
+    <Content Include="BLL\js\account\forgetPwd.js" />
+    <Content Include="BLL\js\coach\messageList.js" />
+    <Content Include="BLL\js\student\onlineExam.js" />
+    <Content Include="BLL\js\student\sendMessage.js" />
+    <Content Include="BLL\js\student\sentMessage.js" />
+    <Content Include="BLL\js\student\student.js" />
+    <Content Include="BLL\js\coach\studentList.js" />
+    <Content Include="BLL\js\component\tool.js" />
     <Content Include="Data\DB\SQL2008\drivingSchool.mdf" />
     <Content Include="Data\DB\SQL2008\drivingSchool_log.ldf">
       <DependentUpon>drivingSchool.mdf</DependentUpon>
@@ -95,24 +130,76 @@
       <DependentUpon>drivingSchool.mdf</DependentUpon>
     </Content>
     <Content Include="Data\js\exam.js" />
+    <Content Include="public\account\changeInfo.html" />
+    <Content Include="public\account\changePwd.html" />
+    <Content Include="public\account\forgetPwd.html" />
+    <Content Include="public\account\login.html" />
+    <Content Include="public\account\register.html" />
+    <Content Include="public\coach\coach.html" />
+    <Content Include="public\coach\messageList.html" />
+    <Content Include="public\coach\studentList.html" />
+    <Content Include="public\css\styles.css" />
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\form.bundle.js" />
+    <Content Include="public\img\default.cur" />
+    <Content Include="public\img\pointer.cur" />
+    <Content Include="public\information\about.html" />
+    <Content Include="public\js\about.js" />
+    <Content Include="public\js\changeInfo.js" />
+    <Content Include="public\js\changePwd.js" />
+    <Content Include="public\js\coach.js" />
+    <Content Include="public\js\coachList.js" />
+    <Content Include="public\js\forgetPwd.js" />
+    <Content Include="public\js\login.js" />
+    <Content Include="public\js\messageList.js" />
+    <Content Include="public\js\onlineExam.js" />
+    <Content Include="public\js\register.js" />
+    <Content Include="public\js\sendMessage.js" />
+    <Content Include="public\js\sentMessage.js" />
+    <Content Include="public\js\student.js" />
+    <Content Include="public\js\studentList.js" />
+    <Content Include="public\main.bundle.js" />
+    <Content Include="public\student\coachList.html" />
+    <Content Include="public\student\onlineExam.html" />
+    <Content Include="public\student\sendMessage.html" />
+    <Content Include="public\student\sentMessage.html" />
+    <Content Include="public\student\student.html" />
     <Content Include="UI\account\changeInfo.html" />
     <Content Include="UI\account\changePwd.html" />
     <Content Include="UI\account\forgetPwd.html" />
+    <Content Include="UI\coach\coach.html" />
     <Content Include="UI\coach\messageList.html" />
     <Content Include="UI\coach\studentList.html" />
     <Content Include="UI\information\about.html" />
-    <Content Include="UI\less\login.less" />
-    <None Include="UI\less\List.less" />
-    <Content Include="UI\less\register.less" />
-    <Content Include="UI\less\onlineExam.less" />
-    <None Include="UI\less\sendMessage.less" />
-    <Content Include="UI\less\student.less" />
-    <Content Include="UI\less\style.less" />
-    <Content Include="UI\less\variable.less" />
-    <Content Include="UI\less\forgetPwd.less" />
-    <Content Include="UI\less\changePwd.less" />
-    <Content Include="UI\less\coach.less" />
-    <Content Include="UI\less\changeInfo.less" />
+    <Content Include="UI\style\form\login.less" />
+    <Content Include="UI\style\component\main\affiche.less" />
+    <Content Include="UI\style\component\form\button.less" />
+    <Content Include="UI\style\component\main\card.less" />
+    <Content Include="UI\style\component\form\checkbox.less" />
+    <Content Include="UI\style\form\form.less" />
+    <Content Include="UI\style\component\main\header.less" />
+    <Content Include="UI\style\component\common\hover.less" />
+    <Content Include="UI\style\component\form\input.less" />
+    <Content Include="UI\style\component\main\home.less" />
+    <Content Include="UI\style\component\form\radio.less" />
+    <Content Include="UI\style\component\main\navigation.less" />
+    <None Include="UI\style\main\List.less" />
+    <Content Include="UI\style\form\register.less" />
+    <Content Include="UI\style\main\onlineExam.less" />
+    <Content Include="UI\style\component\form\selection.less" />
+    <Content Include="UI\style\component\main\loading.less" />
+    <Content Include="UI\style\main\main.less" />
+    <None Include="UI\style\form\sendMessage.less" />
+    <Content Include="UI\style\main\student.less" />
+    <Content Include="UI\style\component\common\style.less" />
+    <Content Include="UI\style\component\common\variable.less" />
+    <Content Include="UI\style\form\forgetPwd.less" />
+    <Content Include="UI\style\form\changePwd.less" />
+    <Content Include="UI\style\main\coach.less" />
+    <Content Include="UI\style\form\changeInfo.less" />
+    <Content Include="UI\style\component\common\shake.less" />
+    <Content Include="UI\style\component\main\table.less" />
+    <Content Include="UI\style\component\main\user.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,22 +208,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BLL\js\login.js" />
-    <Content Include="BLL\js\register.js" />
+    <Content Include="BLL\js\account\login.js" />
+    <Content Include="BLL\js\account\register.js" />
     <Content Include="Data\img\default.cur" />
     <Content Include="Data\img\favicon.ico" />
     <Content Include="Data\img\pointer.cur" />
     <Content Include="Data\js\babel.js" />
     <Content Include="Data\js\jQuery.js" />
     <Content Include="Data\js\less.js" />
-    <Content Include="UI\coach\main.html" />
     <Content Include="UI\account\login.html" />
     <Content Include="UI\account\register.html" />
     <Content Include="UI\student\coachList.html" />
-    <Content Include="UI\student\main.html" />
     <Content Include="UI\student\onlineExam.html" />
     <Content Include="UI\student\sendMessage.html" />
     <Content Include="UI\student\sentMessage.html" />
+    <Content Include="UI\student\student.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -165,13 +251,16 @@
     <Compile Include="DAL\SQL.cs" />
     <Compile Include="DAL\Student.cs" />
     <Compile Include="DAL\Suggestion.cs" />
-    <Compile Include="Model\AccountModel.cs" />
-    <Compile Include="Model\AfficheModel.cs" />
-    <Compile Include="Model\MessageModel.cs" />
-    <Compile Include="Model\SuggestionModel.cs" />
+    <Compile Include="obj\Model\AccountModel.cs" />
+    <Compile Include="obj\Model\AfficheModel.cs" />
+    <Compile Include="obj\Model\MessageModel.cs" />
+    <Compile Include="obj\Model\SuggestionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\BLL\ajax\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

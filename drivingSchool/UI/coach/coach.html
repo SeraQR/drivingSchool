@@ -7,7 +7,8 @@
     <meta name="renderer" content="webkit" />
     <meta name="force-rendering" content="webkit" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>驾校管理系统</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
     <div id="loading">
@@ -43,14 +44,14 @@
             </div>
             <div id="message">
                 <div class="column">
-                    <a id="modifyInfo">修改资料</a>
+                    <a id="modifyInfo" href="../account/changeInfo.html" >修改资料</a>
                     <a class="unread" id="newStudent">新增学员：
                         <span id="newStudentNum">0</span>
                     </a>
                     <a id="studentList" href="studentList.html">学员列表</a>
                 </div>
                 <div class="column">
-                    <a id="modifyPwd">修改密码</a>
+                    <a id="modifyPwd" href="../account/changePwd.html" >修改密码</a>
                     <a class="unread" id="newMessage">新增预约：
                         <span id="newMessageNum">0</span>
                     </a>
@@ -64,6 +65,7 @@
             </div>
         </div>
     </div>
+    <script src="../../Data/js/jQuery.js"></script>
 </body>
 
 </html>
