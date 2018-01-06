@@ -2,44 +2,27 @@
 import * as af from "js/ajax/affiche";
 import * as co from "js/ajax/coach";
 import * as _ from "js/main/main";
-import {
-    act,
-    isCoach,
-    getGreeting
-} from "js/common/variable";
-const account = sessionStorage.getItem("account");
+import { act } from "js/common/variable";
 
 let newStudentNum = 0;
 let newMessageNum = 0;
+let results=[];
 let userName = "";
 
 $(() => {
     Promise.all([
-        getPersonalInformation(),
-        getAffiche()
+        results = _.getPersonalInformation(act),
+        _.getAffiche()
     ]).then(() => {
         _.Init();
-    });
-});
-
-function getPersonalInformation() {
-    const results = co.getPersonalInformation(act)
-    if (results) {
-        const greeting = getGreeting();
-        $("#name").text(greeting + results[0]);
-        $("#userName").text(`昵称：${results[0]}`);
-        $("#userDescription").text(`描述：${results[1]}`);
-        $("#userAddress").text(`住址：${results[2]}`);
+    }).then(()=>{
         $("#newStudentNum").text(results[3]);
         $("#newMessageNum").text(results[4]);
         newStudentNum = parseInt(results[3]);
         newMessageNum = parseInt(results[4]);
         userName = results[0];
-    } else {
-        alert("发生了点小意外~");
-    }
-}
-
+    });
+});
 $("#exit").click(() => {
     sessionStorage.setItem("backLogin", true);
     location.href = "../account/login.html";
@@ -55,17 +38,6 @@ $("#releaseNews").click(() => {
         }
     }
 });
-
-function getAffiche() {
-    const result = af.getAffiche();
-    if (result) {
-        $("#affiche").text(result);
-    } else {
-        alert("发生了点小意外~");
-    }
-}
-
-
 
 $("#newStudent").click(() => {
     if (newStudentNum !== 0) {

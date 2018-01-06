@@ -65,12 +65,15 @@ message.blur(() => {
         _.showTip("");
     }
 });
+
 $(document).keydown(e => {
     if (e.keyCode === 13) {
         send();
     }
 });
+
 $("#send").click(send);
+
 function send() {
     if (val === "placeholder") {
         _.showTip("请选择一位教练！");

@@ -13,7 +13,7 @@ config.HTMLDirs.forEach((page) => {
         filename: `${page}.html`,
         template: path.resolve(__dirname, `${config.templatePath}${page}.html`),
         inject: "body",
-        title: "驾校管理系统", 
+        title: "驾校管理系统",
         chunks: ["common", page],
         minify: {
             removeComments: true,
@@ -43,14 +43,6 @@ module.exports = {
     },
 
     devtool: "eval-source-map",
-
-    devServer: {
-        contentBase: config.outputPath, //本地服务器所加载的页面所在的目录
-        historyApiFallback: true, //再找不到文件的时候默认指向index.html,
-        inline: true, //当源文件改变时会自动刷新页面
-        hot: true, //热加载开启
-        port: 8080 //	设置默认监听端口
-    },
     resolve: {
         extensions: [".js", ".html", ".css", ".txt", ".less", ".ejs", ".json"],
         alias: {
@@ -63,26 +55,39 @@ module.exports = {
         rules: [{
                 test: /\.(less|css)?$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
                     use: [{
                             loader: "css-loader",
-                            options: { minimize: true }
+                            options: {
+                                minimize: true
+                            }
                         },
                         {
                             loader: "postcss-loader",
-                            options: { plugins: (loader) => [require("autoprefixer")()] }
+                            options: {    
+
+                                plugins: (loader) => [
+                                    require('postcss-import')({ addDependencyTo: webpack }),
+                                    require('postcss-cssnext')(),
+                                    require('autoprefixer')({broswers:['last 5 versions']}), 
+                                    require('cssnano')() ]
+                            }
                         },
-                        { loader: "less-loader" }
+                        {
+                            loader: "less-loader"
+                        }
                     ]
                 }),
-                exclude: path.resolve(__dirname, "../node_modules")
+                exclude: path.resolve(__dirname, "../node_modules"),
+                include: path.resolve(__dirname, "../drivingSchool/UI/style")
             },
             {
                 test: /\.js$/,
                 loader: "babel-loader",
                 exclude: path.resolve(__dirname, "../node_modules"),
                 include: path.resolve(__dirname, "../drivingSchool/BLL/js"),
-                options: {"presets": ["latest"] }
+                options: {
+                    "presets": ["latest"]
+                }
             },
             {
                 test: /\.ejs$/,
@@ -95,21 +100,25 @@ module.exports = {
                 use: {
                     loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]",
                     options: {
-                        publicPath:"/"
+                        publicPath: "/"
                     }
                 }
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(["public"],{
-            root: __dirname,//指定插件根目录位置
+        new CleanWebpackPlugin(["public"], {
+            root: __dirname, //指定插件根目录位置
             verbose: true, //开启在控制台输出信息
             dry: false //启用删除文件
         }),
-        new ExtractTextPlugin(config.cssOutputPath),
+        new ExtractTextPlugin("css/[name].css", {
+            allChunks: true
+        }),
         new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false }
+            compress: {
+                warnings: false
+            }
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "common",

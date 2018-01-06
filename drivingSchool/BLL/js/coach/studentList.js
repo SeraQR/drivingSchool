@@ -1,7 +1,7 @@
-﻿import "mainStyle/studentList";
+﻿import "mainStyle/list";
 import * as _ from "js/main/main";
 import * as co from "js/ajax/coach";
-import * as af from "js/ajax/afiche";
+import * as af from "js/ajax/affiche";
 import * as st from "js/ajax/student";
 
 import {
@@ -9,31 +9,10 @@ import {
     newStudentNum
 } from "js/common/variable"
 
-function getPersonalInformation() {
-    let results = co.getPersonalInformation(act)
-    if (results) {
-        $("#userName").text(`昵称：${results[0]}`);
-        $("#userDescription").text(`描述：${results[1]}`);
-        $("#userAddress").text(`住址：${results[2]}`);
-    } else {
-        alert("发生了点小意外~");
-    }
-}
-
-function getAffiche() {
-    const result = af.getAffiche();
-    if (result) {
-        $("#affiche").text(result);
-    } else {
-        alert("发生了点小意外~");
-    }
-}
-
-
 $(() => {
     Promise.all([
-        getPersonalInformation(),
-        getAffiche(),
+        _.getPersonalInformation(act),
+        _.getAffiche(),
         getStudentList()
     ]).then(() => {
         _.Init()

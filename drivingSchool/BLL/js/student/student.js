@@ -14,33 +14,10 @@ import {
 
 let userName = "";
 
-function getPersonalInformation() {
-    let results = st.getPersonalInformation(act)
-    if (results) {
-        const greeting = getGreeting();
-        $("#name").text(greeting + results[0]);
-        $("#userName").text(`昵称：${results[0]}`);
-        $("#userType").text(`身份：${isCoach}` ? "教练" : "学员");
-        $("#userDescription").text(`描述：${results[1]}`);
-        $("#userAddress").text(`住址：${results[2]}`);
-        userName = results[0];
-    } else {
-        alert("发生了点小意外~");
-    }
-}
-
-function getAffiche() {
-    const result = af.getAffiche();
-    if (result) {
-        $("#affiche").text(result);
-    } else {
-        alert("发生了点小意外~");
-    }
-}
 $(() => {
     Promise.all([
-        getPersonalInformation(),
-        getAffiche(),
+        userName = _.getPersonalInformation(act)[0],
+        _.getAffiche(),
     ]).then(() => {
         _.Init()
     });

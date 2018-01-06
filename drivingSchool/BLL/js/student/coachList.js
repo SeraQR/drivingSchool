@@ -1,4 +1,4 @@
-﻿import "mainStyle/coachList";
+﻿import "mainStyle/list";
 
 import * as _ from "js/main/main";
 
@@ -6,29 +6,18 @@ import * as co from "js/ajax/coach";
 import * as af from "js/ajax/affiche";
 import * as st from "js/ajax/student";
 
-import {
-    act
-} from "js/common/variable"
-
-function getPersonalInformation() {
-    let results = st.getPersonalInformation(act)
-    if (results) {
-        $("#userName").text(`昵称：${results[0]}`);
-        $("#userDescription").text(`描述：${results[1]}`);
-        $("#userAddress").text(`住址：${results[2]}`);
-    } else {
-        alert("发生了点小意外~");
-    }
-}
-
-function getAffiche() {
-    const result = af.getAffiche();
-    if (result) {
-        $("#affiche").text(result);
-    } else {
-        alert("发生了点小意外~");
-    }
-}
+import { act } from "js/common/variable"
+$(() => {
+    Promise.all([
+        _.getPersonalInformation(act),
+        _.getAffiche(),
+        getCoachList()
+    ]).then(() => {
+        _.Init()
+    }).then(() => {
+        _.fixedTHeader();
+    });
+});
 
 function getCoachList() {
     const result = co.getAllInformation("all");
@@ -47,15 +36,3 @@ function getCoachList() {
         alert("发生了点小意外~");
     }
 }
-
-$(() => {
-    Promise.all([
-        getPersonalInformation(),
-        getAffiche(),
-        getCoachList()
-    ]).then(() => {
-        _.Init()
-    }).then(() => {
-        _.fixedTHeader();
-    });
-});

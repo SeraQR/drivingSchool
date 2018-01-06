@@ -59,7 +59,7 @@ account.blur(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("账号", "您的账号格式错误！");
             user.rgtAct = false;
-        } else if (ac.hasInfo("account", "student") || ac.hasInfo("account", "coach")) {
+        } else if (ac.hasInfo("account", "student","",user.act) || ac.hasInfo("account", "coach","",user.act)) {
             user.rgtAct = false;
             _.showTip("账号", "账号已经存在！");
         } else {
@@ -130,7 +130,7 @@ jQname.blur(() => {
     user.name = $.trim(jQname.val());
     if (user.name !== "" && !user.rgtName) {
         tipName.hide("slow");
-        if (ac.hasInfo("name", "student") || ac.hasInfo("name", "coach")) {
+        if (ac.hasInfo("name", "student",user.name) || ac.hasInfo("name", "coach",user.name)) {
             user.rgtName = false;
             _.showTip("昵称", "昵称已经存在！");
         } else {

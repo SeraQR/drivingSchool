@@ -6,38 +6,41 @@
 @import "../component/form/input";
 @import "../component/form/checkbox";
 @import "../component/form/selection";
+
 body {
     position: relative;
     background-image: @bg-main;
 }
 
 .wrap(@top: 20%) {
-    left: 35%;
-    top: @top;
-    opacity: 0;
-    padding: 0px;
-    text-align: center;
-    border-radius: 12px;
-    background-color: rgba(253, 188, 253, 0.2);
-    box-shadow: 0 3px 15px 2px rgba(255, 137, 255, .4);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    animation: shake 50s infinite ease-in-out;
-    #tip {
-        color: red;
-        letter-spacing: 2px;
-        text-shadow: rgb(221, 73, 73) 0px 0px 10px;
-    }
-    .title {
-        .aTitle();
-        margin-bottom: 1em;
-    }
-    label {
-        font-size: 75% !important;
-    }
-    .backLogin {
-        .hoverAnchor();
-        margin-right: 80%;
-        margin-left: -150px;
+    .wrap {
+        left: 35%;
+        top: @top;
+        opacity: 0;
+        padding: 0px;
+        text-align: center;
+        border-radius: 12px;
+        background-color: rgba(253, 188, 253, 0.2);
+        box-shadow: 0 3px 15px 2px rgba(255, 137, 255, .4);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        animation: shake 50s infinite ease-in-out;
+        #tip {
+            color: red;
+            letter-spacing: 2px;
+            text-shadow: rgb(221, 73, 73) 0px 0px 10px;
+        }
+        .title {
+            .aTitle();
+            margin-bottom: 1em;
+        }
+        label {
+            font-size: 75% !important;
+        }
+        .backLogin {
+            .hoverAnchor();
+            margin-right: 80%;
+            margin-left: -150px;
+        }
     }
 }

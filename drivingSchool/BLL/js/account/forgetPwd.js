@@ -2,7 +2,7 @@
 import * as _ from "js/form/form";
 import * as ac from "js/ajax/account";
 import {
-    reBox,
+    regBox,
     tipAccount,
     account,
     coach
@@ -27,7 +27,7 @@ account.blur(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("您的账号格式错误！");
             user.rgtAct = false;
-        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student")) {
+        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student","",user.act)) {
             user.rgtAct = false;
             _.showTip("该账号不存在！");
         } else {
@@ -52,7 +52,7 @@ coach.change(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("您的账号格式错误！");
             user.rgtAct = false;
-        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student")) {
+        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student","",user.act)) {
             user.rgtAct = false;
             _.showTip("该账号不存在！");
         } else {

@@ -1,5 +1,5 @@
 ﻿const accountAjax = "../../../BLL/ajax/Account.ashx";
-export function hasInfo(info, table,account = "",password = "") {
+export function hasInfo(type, table,name = "",account = "",password = "") {
     let returnValue = false;
     $.ajax({
         url: accountAjax,
@@ -8,7 +8,10 @@ export function hasInfo(info, table,account = "",password = "") {
         data: {
             "key": "hasInfo",
             "table": table,
-            "type": info
+            "type": type,
+            "name":name,
+            "account":account,
+            "password":password
         },
         success: result => {
             returnValue = result.toLowerCase() === "true";
@@ -60,7 +63,7 @@ export function changePwd(table, account,password) {
 export function getQuestionAnswer(table,account){
     let returnValue = false;
     $.ajax({
-        url: "../../../BLL/ajax/Account.ashx",
+        url: accountAjax,
         async: false,
         type: "POST",
         data: {
@@ -76,7 +79,7 @@ export function getQuestionAnswer(table,account){
 export function register(user){
     let returnValue = false;
     $.ajax({
-        url: "../../../BLL/ajax/Account.ashx",
+        url: accountAjax,
         async: false,
         type: "POST",
         data: {

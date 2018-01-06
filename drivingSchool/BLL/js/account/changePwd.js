@@ -1,8 +1,8 @@
-﻿import "formStyle/changePwd";
+﻿import "formStyle/forgetPwd";
 import * as _ from "js/form/form";
 import * as ac from "js/ajax/account";
 import {
-    reBox,
+    regBox,
     tipPassword,
     password,
     passwordAgain,

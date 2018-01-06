@@ -7,7 +7,7 @@ import {
     tipAccount,
     tipPassword,
     coach,
-    reBox
+    regBox
 } from "js/common/variable";
 
 
@@ -34,7 +34,7 @@ $(() => {
         sessionStorage.setItem("isCoach", lIsCoach);
         location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`;
     } else {
-        _.Init("50px 100px 0px 100px");
+        _.Init("50px 50px 10px 50px");
     }
 });
 
@@ -66,14 +66,14 @@ account.blur(() => {
             user.userLogin = false;
             _.showTip("您的账号格式错误！");
         } else if (user.pwdLogin) {
-            if (ac.hasInfo("user",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+            if (ac.hasInfo("user",user.isCoach ? "coach" : "student","",user.act,user.pwd)) {
                 user.userLogin = true;
                 _.showTip("信息正确！可以登录！");
             } else {
                 user.userLogin = false;
                 _.showTip("账号内容错误");
             }
-        } else if (!ac.hasInfo("account",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+        } else if (!ac.hasInfo("account",user.isCoach ? "coach" : "student","",user.act)) {
             user.userLogin = false;
             _.showTip("账号不存在！");
         } else {
@@ -101,14 +101,14 @@ password.blur(() => {
             user.pwdLogin = false;
             _.showTip("您的密码格式错误！");
         } else if (user.userLogin) {
-            if (ac.hasInfo("user",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+            if (ac.hasInfo("user",user.isCoach ? "coach" : "student","",user.act,user.pwd)) {
                 user.pwdLogin = true;
                 _.showTip("信息正确！可以登录！");
             } else {
                 user.pwdLogin = false;
                 _.showTip("密码与用户名不匹配！");
             }
-        } else if (!ac.hasInfo("password",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+        } else if (!ac.hasInfo("password",user.isCoach ? "coach" : "student","",user.act,user.pwd)) {
             user.pwdLogin = false;
             _.showTip("密码内容错误！");
         } else {
@@ -133,19 +133,19 @@ coach.change(() => {
     user.pwdLogin = false;
     user.userLogin = false;
 
-    if (user.pwd !== "" && ac.hasInfo("password",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+    if (user.pwd !== "" && ac.hasInfo("password",user.isCoach ? "coach" : "student","",user.act,user.pwd)) {
         if (_.tip.text().indexOf("密码") !== -1) {
             _.showTip("");
         }
         user.pwdLogin = true;
     }
-    if (user.act !== "" && ac.hasInfo("account",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+    if (user.act !== "" && ac.hasInfo("account",user.isCoach ? "coach" : "student","",user.act,user.pwd)) {
         if (_.tip.text().indexOf("账号") !== -1) {
             _.showTip("");
         }
         user.userLogin = true;
     }
-    if (user.pwdLogin && user.userLogin && ac.hasInfo("user",user.isCoach ? "coach" : "student",user.act,user.pwd)) {
+    if (user.pwdLogin && user.userLogin && ac.hasInfo("user",user.isCoach ? "coach" : "student","",user.act,user.pwd)) {
         _.showTip("信息正确！可以登录！");
     } else if (user.pwdLogin && !user.userLogin && user.act !== "") {
         _.showTip("账号不存在！");

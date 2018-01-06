@@ -104,10 +104,15 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="packages.config" />
-    <Content Include="BLL\js\component\animation.js" />
-    <Content Include="BLL\js\component\event.js" />
-    <Content Include="BLL\js\component\exam.js" />
-    <Content Include="BLL\js\component\fixedHeader.js" />
+    <Content Include="BLL\js\component\ajax\account.js" />
+    <Content Include="BLL\js\component\ajax\affiche.js" />
+    <Content Include="BLL\js\component\ajax\coach.js" />
+    <Content Include="BLL\js\component\ajax\message.js" />
+    <Content Include="BLL\js\component\ajax\student.js" />
+    <Content Include="BLL\js\component\ajax\suggestion.js" />
+    <Content Include="BLL\js\component\main\main.js" />
+    <Content Include="BLL\js\component\main\exam.js" />
+    <Content Include="BLL\js\component\common\variable.js" />
     <Content Include="BLL\js\information\about.js" />
     <Content Include="BLL\js\account\changeInfo.js" />
     <Content Include="BLL\js\account\changePwd.js" />
@@ -120,7 +125,7 @@
     <Content Include="BLL\js\student\sentMessage.js" />
     <Content Include="BLL\js\student\student.js" />
     <Content Include="BLL\js\coach\studentList.js" />
-    <Content Include="BLL\js\component\tool.js" />
+    <Content Include="BLL\js\component\form\form.js" />
     <Content Include="Data\DB\SQL2008\drivingSchool.mdf" />
     <Content Include="Data\DB\SQL2008\drivingSchool_log.ldf">
       <DependentUpon>drivingSchool.mdf</DependentUpon>
@@ -138,27 +143,26 @@
     <Content Include="public\coach\coach.html" />
     <Content Include="public\coach\messageList.html" />
     <Content Include="public\coach\studentList.html" />
+    <Content Include="public\common.js" />
     <Content Include="public\css\styles.css" />
     <Content Include="public\favicon.ico" />
-    <Content Include="public\form.bundle.js" />
     <Content Include="public\img\default.cur" />
     <Content Include="public\img\pointer.cur" />
     <Content Include="public\information\about.html" />
-    <Content Include="public\js\about.js" />
-    <Content Include="public\js\changeInfo.js" />
-    <Content Include="public\js\changePwd.js" />
-    <Content Include="public\js\coach.js" />
-    <Content Include="public\js\coachList.js" />
-    <Content Include="public\js\forgetPwd.js" />
-    <Content Include="public\js\login.js" />
-    <Content Include="public\js\messageList.js" />
-    <Content Include="public\js\onlineExam.js" />
-    <Content Include="public\js\register.js" />
-    <Content Include="public\js\sendMessage.js" />
-    <Content Include="public\js\sentMessage.js" />
-    <Content Include="public\js\student.js" />
-    <Content Include="public\js\studentList.js" />
-    <Content Include="public\main.bundle.js" />
+    <Content Include="public\js\account\changeInfo.js" />
+    <Content Include="public\js\account\changePwd.js" />
+    <Content Include="public\js\account\forgetPwd.js" />
+    <Content Include="public\js\account\login.js" />
+    <Content Include="public\js\account\register.js" />
+    <Content Include="public\js\coach\coach.js" />
+    <Content Include="public\js\coach\messageList.js" />
+    <Content Include="public\js\coach\studentList.js" />
+    <Content Include="public\js\information\about.js" />
+    <Content Include="public\js\student\coachList.js" />
+    <Content Include="public\js\student\onlineExam.js" />
+    <Content Include="public\js\student\sendMessage.js" />
+    <Content Include="public\js\student\sentMessage.js" />
+    <Content Include="public\js\student\student.js" />
     <Content Include="public\student\coachList.html" />
     <Content Include="public\student\onlineExam.html" />
     <Content Include="public\student\sendMessage.html" />
@@ -272,16 +276,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1772</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1772/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

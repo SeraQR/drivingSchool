@@ -23,7 +23,7 @@ module.exports = {
     mainChuks:["coach","messageList","studentList","student","coachList","onlineExam","sentMessage","about"],
     cssPublicPath: "../",
     imgOutputPath: "/img/",
-    cssOutputPath: "css/styles.css",
+    cssOutputPath: "css/style.css",
     devServerOutputPath: "../public",
     templatePath: "../drivingSchool/UI/",
     jsEntryPath: "../drivingSchool/BLL/js/",

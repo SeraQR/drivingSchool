@@ -30,7 +30,7 @@ jQName.blur(() => {
     user.name = $.trim(jQName.val());
     if (user.name !== "" && !user.singleName) {
         tipName.hide("slow");
-        if (ac.hasInfo("name", "student") || ac.hasInfo("name", "coach")) {
+        if (ac.hasInfo("name", "student",user.name) || ac.hasInfo("name", "coach",user.name)) {
             user.singleName = false;
             _.showTip("昵称已经存在！");
         } else {

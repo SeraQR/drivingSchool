@@ -149,3 +149,30 @@ export function fixedTHeader(){
         "height": "400px"
     });
 }
+
+import * as co from "js/ajax/coach";
+import { getGreeting,isCoach } from "js/common/variable";
+export function getPersonalInformation(account) {
+    const results = co.getPersonalInformation(account);
+    if (results) {
+        const greeting = getGreeting();
+        $("#name").text(greeting + results[0]);
+        $("#userName").text(`昵称：${results[0]}`);
+        $("#userType").text(`身份：${isCoach ? "教练" : "学员"}`);
+        $("#userDescription").text(`描述：${results[1]}`);
+        $("#userAddress").text(`住址：${results[2]}`);
+    } else {
+        alert("发生了点小意外~");
+    }
+    return results;
+}
+
+import * as af from "js/ajax/affiche";
+export function getAffiche() {
+    const result = af.getAffiche();
+    if (result) {
+        $("#affiche").text(result);
+    } else {
+        alert("发生了点小意外~");
+    }
+}
