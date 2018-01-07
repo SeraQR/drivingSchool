@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <div class="wrap" id="changeInfoWrap">
+    <%  
+        var hasBack = true,
+            title="修改个人资料",
+            inputs = [ { 
+                id:"name", placeHolder:"请填写新的昵称", color:1,isPwd:false },{ 
+                id:"address", placeHolder:"请填写新的地址", color:2,isPwd:false } ,{ 
+                id:"description", placeHolder:"请填写新的描述", color:3,isPwd:false }],
+            button={ id:"changeInfo", text:"修改" };
+    %>
+        <%- include drivingSchool/UI/partials/form/head -%>
+        <div class="content">
+            <%
+                for(var i=0;i<inputs.length;++i){
+                    var input = inputs[i];
+            %>
+                    <%- include drivingSchool/UI/partials/form/input -%>
+             <% } %>
+        </div>
+        <%- include drivingSchool/UI/partials/form/button -%>
+        <br> <br>
+    </div>
+</body>
+</html>

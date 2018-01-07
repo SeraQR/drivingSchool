@@ -7,18 +7,15 @@ import * as st from "js/ajax/student";
 import {
     act,
     newStudentNum
-} from "js/common/variable"
+} from "js/common/variable";
 
 $(() => {
     Promise.all([
         _.getPersonalInformation(act),
         _.getAffiche(),
         getStudentList()
-    ]).then(() => {
-        _.Init()
-    }).then(() => {
-        _.fixedTHeader();
-    });
+    ]).then(_.Init).
+    then(_.fixedTHeader);
 });
 
 function getStudentList() {
@@ -31,16 +28,8 @@ function getStudentList() {
     }
     const result = st.getStudentList(ajaxType, act, newStudentNum);
     if (result) {
-        const domStudents = document.getElementById("students");
-        let sBody = domStudents.createTBody();
-        students.forEach((element, index, array) => {
-            let infos = element.split("=");
-            let tr = sBody.insertRow(index);
-            infos.forEach((e, i, a) => {
-                tr.insertCell(i).appendChild(new Text(e));
-            });
-        });
+        _.createTable(result);
     } else {
-        alert("发生了点小意外~");
+        alert("获取学员列表失败~");
     }
 }

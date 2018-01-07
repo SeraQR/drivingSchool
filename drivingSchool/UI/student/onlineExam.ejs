@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <%- include drivingSchool/UI/partials/main/loader -%>
+    <div class="wrap" id="studentListWrap">
+        <%- include drivingSchool/UI/partials/main/head -%>
+        <div class="Leaderboards">
+            <div class="old">最高答对<span id="oldTureNum"></span> 道</div> <br>
+            <div class="new">目前答对<span id="nowTureNum">0</span> 道</div>
+        </div>
+        <span id="tip">&nbsp;</span>
+        <div id="main">
+            <%- include drivingSchool/UI/partials/main/problem -%>
+            <div class="navigation">
+                <% var button={ id:"sure", text:"提交答案" }; %>
+                <%- include drivingSchool/UI/partials/form/button -%>
+                <div class="prev"><div>上一题</div></div>
+                <div class="next"><div>下一题</div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

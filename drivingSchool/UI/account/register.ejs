@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <div class="wrap" id="registerWrap">
+        <%  
+            var hasBack = true,
+                title="学员注册",
+                inputs = [ { 
+                    id:"account", placeHolder:"请输入账号，手机号或邮箱格式", color:1,isPwd:false 
+                },{ 
+                    id:"password", placeHolder:"请输入密码，6-10位字符", color:2,isPwd:true  },{
+                    id:"question",placeHolder:"请填写密保问题",color:3,isPwd:false  },{
+                    id:"answer",placeHolder:"请填写密保答案",color:2,isPwd:true  },{
+                    id:"name",placeHolder:"请填写您的昵称",color:1,isPwd:false },{
+                    id:"address",placeHolder:"请填写您的住址",color:2,isPwd:false },{
+                    id:"description",placeHolder:"请填写您的个人描述",color:3,isPwd:false }],
+                button={ id:"register", text:"注册" };
+        %>
+        <%- include drivingSchool/UI/partials/form/head -%>
+        <div class="content">
+            <%
+                for(var i=0;i<inputs.length;++i){
+                    var input = inputs[i];
+            %>
+                    <%- include drivingSchool/UI/partials/form/input -%>
+             <% } %>
+        </div>
+       <%- include drivingSchool/UI/partials/form/button -%>
+        <span class="title coachTip">教练注册，请联系系统管理员</span> <br> <br>
+    </div>  
+</body>
+</html>

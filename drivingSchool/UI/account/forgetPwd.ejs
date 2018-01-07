@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <div class="wrap" id="forgetPwdWrap">
+    <%  
+        var hasBack = true,
+            title="忘记密码",
+            input = { id:"account", placeHolder:"请输入您的账号,手机号或邮箱格式", color:1,isPwd:false  },
+            button={ id:"forgetPwd", text:"确定" },
+            checkbox="coach";
+    %>
+        <%- include drivingSchool/UI/partials/form/head -%>
+        <div class="content">
+            <%- include drivingSchool/UI/partials/form/input -%>
+            <br> 我是教练
+            <%- include drivingSchool/UI/partials/form/checkbox -%>
+            <br> <br> <br>
+            <%- include drivingSchool/UI/partials/form/button -%>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>

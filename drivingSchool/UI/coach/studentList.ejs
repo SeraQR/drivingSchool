@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+   <%- include drivingSchool/UI/partials/main/loader -%>
+    <div class="wrap" id="studentListWrap">
+        <%- include drivingSchool/UI/partials/main/head -%>
+        <%- include drivingSchool/UI/partials/main/affiche -%>
+        <%- include drivingSchool/UI/partials/main/user -%>
+        <% var th=["账号","昵称","地址","描述","报名时间"] %>
+        <%- include drivingSchool/UI/partials/main/table -%>
+    </div>
+</body>
+
+</html>

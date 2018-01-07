@@ -57,7 +57,7 @@ coach.change(() => {
             _.showTip("该账号不存在！");
         } else {
             user.rgtAct = true;
-            _.showTip("信息正确！可以登录！");
+            _.showTip("信息正确,可以登录！");
         }
     }
 
@@ -76,7 +76,7 @@ function getQuestionAnswer() {
 
         let question, answer;
 
-        let results = ac.getQuestionAnswer(user.isCoach ? "coach" : "student", user.act)
+        let results = ac.getQuestionAnswer(user.isCoach ? "coach" : "student", user.act);
         if(results){
             question = results[0];
             answer = results[1];
@@ -90,10 +90,10 @@ function getQuestionAnswer() {
                 _.showTip("答案错误，请重试！");
             }
         }else{
-            _.showTip("出了点故障~");
+            _.showTip("获取密保问题失败~");
         }
        
     } else {
         _.showTip("请输入正确的账号！");
     }
-};
+}

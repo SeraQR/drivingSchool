@@ -6,16 +6,15 @@ import { act } from "js/common/variable";
 
 let newStudentNum = 0;
 let newMessageNum = 0;
-let results=[];
+let results = [];
 let userName = "";
 
 $(() => {
     Promise.all([
         results = _.getPersonalInformation(act),
         _.getAffiche()
-    ]).then(() => {
-        _.Init();
-    }).then(()=>{
+    ]).then(_.Init).
+    then(()=>{
         $("#newStudentNum").text(results[3]);
         $("#newMessageNum").text(results[4]);
         newStudentNum = parseInt(results[3]);
@@ -32,9 +31,9 @@ $("#releaseNews").click(() => {
     const content = $.trim(prompt("请输入新的公告内容"));
     if (content !== "") {
         if (af.setAffiche(act, content, userName)) {
-            getAffiche();
+            _.getAffiche();
         } else {
-            alert("发生了点小意外~");
+            alert("发布公告失败~");
         }
     }
 });

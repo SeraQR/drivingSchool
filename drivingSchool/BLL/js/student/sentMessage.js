@@ -6,24 +6,15 @@ import * as af from "js/ajax/affiche";
 import * as st from "js/ajax/student";
 import * as me from "js/ajax/message";
 
-import { act } from "js/common/variable"
+import { act } from "js/common/variable";
 
-let userName="";
+let userName = "";
 function getMessageList() {
-    let students = me.getSentMessage(userName);
-    if (students) {
-        const domStudents = document.getElementById("messages");
-        let sBody = domStudents.createTBody();
-
-        students.forEach((element, index, array) => {
-            let infos = element.split("=");
-            let tr = sBody.insertRow(index);
-            infos.forEach((e, i, a) => {
-                tr.insertCell(i).appendChild(new Text(e));
-            });
-        });
+    let result = me.getSentMessage(userName);
+    if (result) {
+        _.createTable(result);
     } else {
-        alert("发生了点小意外~");
+        alert("获取消息列表错误~");
     }
 }
 $(() => {
@@ -31,9 +22,5 @@ $(() => {
         userName = _.getPersonalInformation(act)[0],
         _.getAffiche(),
         getMessageList()
-    ]).then(() => {
-        _.Init()
-    }).then(() => {
-        _.fixedTHeader();
-    });
+    ]).then(_.Init).then(_.fixedTHeader);
 });

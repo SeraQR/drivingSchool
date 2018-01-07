@@ -1,0 +1,8 @@
+<span class="input input--hoshi">
+    <input class="input__field input__field--hoshi" <% if(input.isPwd) { %> type="password" <% } else { %> type="text" <% } %> id="<%- input.id %>" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-<%- input.color %>" for="<%- input.id %>">
+        <% tipId = input.id.substring(0,1).toUpperCase()+input.id.substring(1) %>
+        <span id="tip<%- tipId %>" class="input__label-content input__label-content--hoshi"><%- input.placeHolder %></span>
+    </label>
+</span>
+<br>

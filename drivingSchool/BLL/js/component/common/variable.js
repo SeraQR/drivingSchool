@@ -49,3 +49,29 @@ export function getGreeting() {
     }
     return greeting;
 }
+
+class cError {
+    constructor(errorMessage, scriptURI, lineNumber, columnNumber, errorObj) {
+        this.errorMessage = errorMessage;
+        this.scriptURI = scriptURI;
+        this.lineNumber = lineNumber;
+        this.columnNumber = columnNumber;
+        this.errorObj = errorObj;
+        this.userAgent = navigator.userAgent;
+    }
+    toString() {
+        return `错误信息：${this.errorMessage} \n 
+                出错文件：${this.scriptURI} \n
+                出错行号：${this.lineNumber} \n
+                出错列号：${this.columnNumber} \n
+                错误详情：${this.errorObj} \n
+                浏览器信息：${this.userAgent}`;
+    }
+}
+import * as er from "js/ajax/error";
+export function monitor(){
+    window.onerror = (errorMessage, scriptURI, lineNumber,columnNumber,errorObj)=> {
+        const newError = new cError(errorMessage, scriptURI, lineNumber,columnNumber,errorObj);
+        er.uploadError(newError);
+    };
+}

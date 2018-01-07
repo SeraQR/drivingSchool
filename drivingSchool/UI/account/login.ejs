@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <div class="wrap" id="loginWrap">
+        <%  
+            var hasBack = false,
+                title="驾校管理系统",
+                inputs = [ { 
+                    id:"account", placeHolder:"请输入账号，手机号或邮箱格式", color:1,isPwd:false 
+                },{ 
+                    id:"password", placeHolder:"请输入密码，6-10位字符", color:2,isPwd:true  }],
+                button={ id:"login", text:"登录" },
+                checkbox="coach";
+        %>
+        <%- include drivingSchool/UI/partials/form/head -%>
+
+        <div class="content">
+            <%
+                for(var i=0;i<inputs.length;++i){
+                    var input = inputs[i];
+            %>
+                    <%- include drivingSchool/UI/partials/form/input -%>
+             <% } %>
+        </div>
+        
+        <%- include drivingSchool/UI/partials/form/button -%>
+        <div class="other">
+            <a class="register" href="register.html">在线报名</a>
+            <a class="forgetpwd" href="forgetPwd.html">忘记密码</a>
+            <br> <br> <br>
+            <div style="position:absolute">我是教练</div>
+            <%- include drivingSchool/UI/partials/form/checkbox -%>
+            <div style="position:absolute;margin-top:-30px;margin-left:150px;">
+                <div style="position:absolute;">免登陆</div>
+                <% checkbox = "rememberPwd"; %>
+                <%- include drivingSchool/UI/partials/form/checkbox -%>
+            </div>
+        </div> <br> <br>
+        <a class="tourist" href="../information/about.html">随便看看</a>
+    </div>
+    </body>
+
+</html>

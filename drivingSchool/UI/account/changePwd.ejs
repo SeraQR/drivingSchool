@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <div class="wrap" id="changePwdWrap">
+    <%  
+        var hasBack = true,
+            title="修改密码",
+            inputs = [ { 
+                id:"password", placeHolder:"请输入您的新密码，6-10位字符", color:1,isPwd:true },{ 
+                id:"passwordAgain", placeHolder:"再次输入您的新密码", color:2,isPwd:true  }],
+            button={ id:"changePwd", text:"确定" };
+    %>
+        <div class="content">
+        <%
+            for(var i=0;i<inputs.length;++i){
+                var input = inputs[i];
+        %>
+                <%- include drivingSchool/UI/partials/form/input -%>
+             <% } %>
+            <br>
+            <%- include drivingSchool/UI/partials/form/button -%>
+            <br>
+        </div>
+    </div>
+</body>
+</html>

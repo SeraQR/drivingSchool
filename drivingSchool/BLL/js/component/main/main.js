@@ -139,21 +139,34 @@ function threedee(e) {
     header.style.webkitTransform = `translateZ(0) rotateX(${y * 1.5}deg) rotateY(${-x * 1.5}deg)`;
     header.style.MozTransform = `translateZ(0) rotateX(${y * 1.5}deg) rotateY(${-x * 1.5}deg)`;
 }
-
+import {monitor} from "js/common/variable";
 export function Init() {
-    $(".content-header").on("mousemove", threedee);
-    setTimeout("$(\"#loading\").fadeOut()", 800);
+    Promise.all([
+        $(".content-header").on("mousemove", threedee),
+        setTimeout("$(\"#loading\").fadeOut()", 800)
+    ]).then(() => {
+        console.log("\n %c 项目开源地址 %c  https://github.com/Tomotoes/drivingSchool \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
+    }).then(monitor);
 }
-export function fixedTHeader(){
+export function fixedTHeader() {
     $(".table").freezeHeader({
         "height": "400px"
     });
 }
 
 import * as co from "js/ajax/coach";
-import { getGreeting,isCoach } from "js/common/variable";
+import * as st from "js/ajax/student";
+import {
+    getGreeting,
+    isCoach
+} from "js/common/variable";
 export function getPersonalInformation(account) {
-    const results = co.getPersonalInformation(account);
+    let results = [];
+    if (isCoach) {
+        results = co.getPersonalInformation(account);
+    } else {
+        results = st.getPersonalInformation(account);
+    }
     if (results) {
         const greeting = getGreeting();
         $("#name").text(greeting + results[0]);
@@ -162,7 +175,7 @@ export function getPersonalInformation(account) {
         $("#userDescription").text(`描述：${results[1]}`);
         $("#userAddress").text(`住址：${results[2]}`);
     } else {
-        alert("发生了点小意外~");
+        alert("获取个人信息发生错误~");
     }
     return results;
 }
@@ -173,6 +186,18 @@ export function getAffiche() {
     if (result) {
         $("#affiche").text(result);
     } else {
-        alert("发生了点小意外~");
+        alert("获取公告发生错误~");
     }
+}
+
+export function createTable(result){
+    const domStudents = document.querySelector(".table");
+    let sBody = domStudents.createTBody();
+    result.forEach((element, index, array) => {
+        let infos = element.split("=");
+        let tr = sBody.insertRow(index);
+        infos.forEach((e, i, a) => {
+            tr.insertCell(i).appendChild(new Text(e));
+        });
+    });
 }

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+   <%- include drivingSchool/UI/partials/main/loader -%>
+    <div class="wrap" id="coachWrap">
+        <%- include drivingSchool/UI/partials/main/head -%>
+        <%- include drivingSchool/UI/partials/main/affiche -%>
+        <%- include drivingSchool/UI/partials/main/user -%>
+        <div id="main" class="body-wrap">
+            <%- include drivingSchool/UI/partials/main/greeting -%>
+            <% var column = [ [ {
+                    id:"modifyInfo", href:"../account/changeInfo.html", text:"修改资料"
+                },{
+                    id:"newStudent", href:"javascript:;", text:"新增学员： <span id='newStudentNum'>0</span>"
+                },{
+                    id:"studentList", href:"studentList.html", text:"学员列表"
+                } ],[{
+                    id:"modifyPwd", href:"../account/changePwd.html", text:"修改密码"
+                },{
+                    id:"newMessage", href:"javascript:;", text:"新增预约： <span id='newMessageNum'>0</span>" 
+                },{
+                    id:"messageList", href:"messageList.html", text:"预约列表"
+                }],[{
+                    id:"about", href:"../information/about.html", text:"关于系统"
+                },{
+                    id:"releaseNews", href:"javascript:;", text:"发布公告"
+                },{
+                    id:"exit", href:"javascript:;", text:"退出" }]];
+            %>
+            <%- include drivingSchool/UI/partials/main/main -%>
+        </div>
+    </div>
+</body>
+
+</html>

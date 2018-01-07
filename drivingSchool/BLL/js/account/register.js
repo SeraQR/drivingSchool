@@ -35,9 +35,9 @@ const user = {
 };
 
 function showTip(key, info) {
-    if (tip.text().indexOf(key) !== -1 || $.trim(tip.text()) === "") {
-        tip.text(info);
-        info ? tip.fadeIn(500) : tip.fadeOut("slow");
+    if (_.tip.text().indexOf(key) !== -1 || $.trim(_.tip.text()) === "") {
+        _.tip.text(info);
+        info ? _.tip.fadeIn(500) : _.tip.fadeOut("slow");
     }
 }
 $(() => {
@@ -45,9 +45,9 @@ $(() => {
 });
 
 $("input").keypress(e => {
-    if (tip.text().indexOf("错误") !== -1) {
-        tip.text(" ");
-        tip.fadeOut("slow");
+    if (_.tip.text().indexOf("错误") !== -1) {
+        _.tip.text(" ");
+        _.tip.fadeOut("slow");
     }
     return e.keyCode !== 32;
 });

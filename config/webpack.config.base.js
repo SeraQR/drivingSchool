@@ -11,22 +11,24 @@ config.HTMLDirs.forEach((page) => {
 
     const htmlPlugin = new htmlWebpackPlugin({
         filename: `${page}.html`,
-        template: path.resolve(__dirname, `${config.templatePath}${page}.html`),
+        template: path.resolve(__dirname, `${config.templatePath}${page}.ejs`),
         inject: "body",
         title: "驾校管理系统",
+        favicon:path.resolve(__dirname, `${config.imgEntryPath}`),
         chunks: ["common", page],
-        minify: {
-            removeComments: true,
-            collapseWhitespace: true,
-            removeRedundantAttributes: true,
-            useShortDoctype: true,
-            removeEmptyAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-            keepClosingSlash: true,
-            minifyJS: true,
-            minifyCSS: true,
-            minifyURLs: true
-        }
+        hash:true
+        // minify: {
+        //     removeComments: true,
+        //     collapseWhitespace: true,
+        //     removeRedundantAttributes: true,
+        //     useShortDoctype: true,
+        //     removeEmptyAttributes: true,
+        //     removeStyleLinkTypeAttributes: true,
+        //     keepClosingSlash: true,
+        //     minifyJS: true,
+        //     minifyCSS: true,
+        //     minifyURLs: true
+        // }
     });
     HTMLPlugins.push(htmlPlugin);
     Entries[page] = path.resolve(__dirname, `${config.jsEntryPath}${page}.js`);
@@ -55,6 +57,7 @@ module.exports = {
         rules: [{
                 test: /\.(less|css)?$/,
                 use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
                     use: [{
                             loader: "css-loader",
                             options: {
@@ -63,13 +66,18 @@ module.exports = {
                         },
                         {
                             loader: "postcss-loader",
-                            options: {    
+                            options: {
 
                                 plugins: (loader) => [
-                                    require('postcss-import')({ addDependencyTo: webpack }),
-                                    require('postcss-cssnext')(),
-                                    require('autoprefixer')({broswers:['last 5 versions']}), 
-                                    require('cssnano')() ]
+                                    require("postcss-import")({
+                                        addDependencyTo: webpack
+                                    }),
+                                    require("postcss-cssnext")(),
+                                    require("autoprefixer")({
+                                        broswers: ["last 5 versions"]
+                                    }),
+                                    require("cssnano")()
+                                ]
                             }
                         },
                         {
@@ -91,30 +99,30 @@ module.exports = {
             },
             {
                 test: /\.ejs$/,
-                loader: "ejs-loader",
-                include: path.resolve(__dirname, "./src/layer"),
-                exclude: path.resolve(__dirname, "./node_modules")
+                loader: "ejs-compiled-loader",
+                include: path.resolve(__dirname, "../drivingSchool/UI"),
+                exclude: path.resolve(__dirname, "../node_modules")
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|cur)$/i,
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|cur|ico)$/i,
                 use: {
                     loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]",
                     options: {
                         publicPath: "/"
                     }
                 }
+            },
+            {
+                test: require.resolve("jquery"), // 此loader配置项的目标是NPM中的jquery
+                loader: "expose-loader?$!expose-loader?jQuery" // 先把jQuery对象声明成为全局变量`jQuery`，再通过管道进一步又声明成为全局变量`$`
             }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(["public"], {
-            root: __dirname, //指定插件根目录位置
-            verbose: true, //开启在控制台输出信息
-            dry: false //启用删除文件
+            dry: true
         }),
-        new ExtractTextPlugin("css/[name].css", {
-            allChunks: true
-        }),
+        new ExtractTextPlugin("css/[name].css"),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false

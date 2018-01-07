@@ -12,8 +12,8 @@ let val = "placeholder";
 const userName = sessionStorage.getItem("sender");
 
 $(() => {
-    _.Init("50px 100px 0px 100px");
     getCoachName();
+    _.Init("50px 100px 0px 100px");
 });
 
 $(".drop .option").click(function () {
@@ -34,7 +34,7 @@ $(".drop .option").click(function () {
         }, 400 + options * 100);
     }
     if (val !== "placeholder" || prevActive === "placeholder") {
-        if (tip.text().indexOf("教练") !== -1) {
+        if (_.tip.text().indexOf("教练") !== -1) {
             _.showTip("");
         }
         $(".drop .option").removeClass("active");
@@ -50,7 +50,7 @@ function getCoachName() {
             select.append(` <div class=option data-value=${e}>${e}</div>`);
         });
     } else {
-        _.showTip("出了点故障~");
+        _.showTip("获取教练昵称失败~");
     }
 }
 
@@ -61,7 +61,7 @@ message.blur(() => {
     } else {
         tipMessage.show("slow");
     }
-    if (tip.text().indexOf("消息") !== -1) {
+    if (_.tip.text().indexOf("消息") !== -1) {
         _.showTip("");
     }
 });

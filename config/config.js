@@ -27,6 +27,6 @@ module.exports = {
     devServerOutputPath: "../public",
     templatePath: "../drivingSchool/UI/",
     jsEntryPath: "../drivingSchool/BLL/js/",
-    imgEntryPath: "../drivingSchool/drivingSchool/Data/img/favicon.ico",
+    imgEntryPath: "../drivingSchool/Data/img/favicon.ico",
     outputPath: "../drivingSchool/public"
 };

@@ -7,20 +7,17 @@ import * as me from "js/ajax/message";
 import {
     act,
     newMessageNum
-} from "js/common/variable"
+} from "js/common/variable";
 
-let userName="";
+let userName = "";
 
 $(() => {
     Promise.all([
-        userName = results = _.getPersonalInformation(act)[0],
+        userName = _.getPersonalInformation(act)[0],
         _.getAffiche(),
         getMessageList()
-    ]).then(() => {
-        _.Init()
-    }).then(()=>{
-        _.fixedTHeader();
-    });
+    ]).then(_.Init)
+    .then(_.fixedTHeader);
 });
 
 function getMessageList() {
@@ -33,17 +30,8 @@ function getMessageList() {
     }
     const result = me.getMessageList(ajaxType,userName,newMessageNum);
     if(result){
-        const domStudents = document.getElementById("messages");
-        let sBody = domStudents.createTBody();
-
-        result.forEach((element, index, array) => {
-            let infos = element.split("=");
-            let tr = sBody.insertRow(index);
-            infos.forEach((e, i, a) => {
-                tr.insertCell(i).appendChild(new Text(e));
-            });
-        });
+        _.createTable(result);
     } else {
-        alert("发生了点小意外~");
+        alert("获取预约列表失败~");
     }
 }

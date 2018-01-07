@@ -1,0 +1,13 @@
+<div id="message">
+<% for(var i=0;i<column.length;++i){ %>
+                
+    <div class="column">
+
+    <% for(var j=0;j<column[i].length;++j){ %>
+        <a id="<%- column[i][j].id %>" href="<%- column[i][j].href %>" >
+            <%- column[i][j].text %> </a>
+    <% } %>
+    
+    </div>
+<% } %>
+</div>

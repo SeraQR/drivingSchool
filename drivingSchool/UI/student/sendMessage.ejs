@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <div class="wrap" id="sendMessageWrap">
+     <%  
+            var hasBack = true,
+                title="预约教练",
+                input = { id:"message", placeHolder:"请输入您的预约消息", color:1,isPwd:false },
+                button={ id:"send", text:"发送" };
+        %>
+        <%- include drivingSchool/UI/partials/form/head -%>
+        <div class="drop">
+            <div class="option active placeholder" data-value="placeholder">
+                请选择一位教练
+            </div>
+        </div>
+        <br> <br> <br> <br>
+        <%- include drivingSchool/UI/partials/form/input -%>
+        <br> <br>
+        <%- include drivingSchool/UI/partials/form/button -%>
+        <br> <br>
+    </div>
+</body>
+
+</html>

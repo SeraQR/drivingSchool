@@ -1,1 +1,91 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="renderer" content="webkit"/><meta name="force-rendering" content="webkit"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><link rel="shortcut icon" href="../favicon.ico"><title>驾校管理系统</title><link href="../css/account/register.css" rel="stylesheet"></head><body><div class="wrap" id="registerWrap"><a class="backLogin" href="javascript:history.back();">返回</a><br><span id="tip">&nbsp;</span><br><br><h2 class="title">学员注册</h2><div class="content"><span class="input input--hoshi"><input class="input__field input__field--hoshi" id="account"/><label class="input__label input__label--hoshi input__label--hoshi-color-1" for="account"><span id="tipAccount" class="input__label-content input__label-content--hoshi">请填写账号，手机号或邮箱</span></label></span><br><span class="input input--hoshi"><input class="input__field input__field--hoshi" type="password" id="password"/><label class="input__label input__label--hoshi input__label--hoshi-color-2" for="password"><span id="tipPassword" class="input__label-content input__label-content--hoshi">请填写密码，6-10位字符</span></label></span><br><span class="input input--hoshi"><input class="input__field input__field--hoshi" id="question"/><label class="input__label input__label--hoshi input__label--hoshi-color-3" for="question"><span id="tipQuestion" class="input__label-content input__label-content--hoshi">请填写密保问题</span></label></span><br><span class="input input--hoshi"><input class="input__field input__field--hoshi" type="password" id="answer"/><label class="input__label input__label--hoshi input__label--hoshi-color-2" for="answer"><span id="tipAnswer" class="input__label-content input__label-content--hoshi">请填写密保答案</span></label></span><br><span class="input input--hoshi"><input class="input__field input__field--hoshi" id="name"/><label class="input__label input__label--hoshi input__label--hoshi-color-1" for="name"><span id="tipName" class="input__label-content input__label-content--hoshi">请填写您的昵称</span></label></span><br><span class="input input--hoshi"><input class="input__field input__field--hoshi" id="address"/><label class="input__label input__label--hoshi input__label--hoshi-color-3" for="address"><span id="tipAddress" class="input__label-content input__label-content--hoshi">请填写您的住址</span></label></span><br><span class="input input--hoshi"><input class="input__field input__field--hoshi" id="description"/><label class="input__label input__label--hoshi input__label--hoshi-color-2" for="description"><span id="tipDescription" class="input__label-content input__label-content--hoshi">请填写您的个人描述</span></label></span><br></div><a id="register" class="button button-3d button-primary button-rounded">注册</a><br><br><span class="title coachTip">教练注册，请联系系统管理员</span><br><br></div><script src="../../Data/js/jQuery.js"></script><script type="text/javascript" src="../common.js"></script><script type="text/javascript" src="../js/account/register.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>驾校管理系统</title>
+<link rel="shortcut icon" href="favicon.ico"><link href="../css/account/register.css?8f9628ff17497e9cb8e6" rel="stylesheet"></head><body>
+    <div class="wrap" id="registerWrap">
+        
+        
+    <a class="backLogin" href="javascript:history.back();">返回</a>
+    <br>
+
+<span id="tip">&nbsp;</span>
+<br> <br>
+<h2 class="title">学员注册</h2>        <div class="content">
+            
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="text"  id="account" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="account">
+        
+        <span id="tipAccount" class="input__label-content input__label-content--hoshi">请输入账号，手机号或邮箱格式</span>
+    </label>
+</span>
+<br>
+             
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="password"  id="password" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="password">
+        
+        <span id="tipPassword" class="input__label-content input__label-content--hoshi">请输入密码，6-10位字符</span>
+    </label>
+</span>
+<br>
+             
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="text"  id="question" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="question">
+        
+        <span id="tipQuestion" class="input__label-content input__label-content--hoshi">请填写密保问题</span>
+    </label>
+</span>
+<br>
+             
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="password"  id="answer" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="answer">
+        
+        <span id="tipAnswer" class="input__label-content input__label-content--hoshi">请填写密保答案</span>
+    </label>
+</span>
+<br>
+             
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="text"  id="name" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="name">
+        
+        <span id="tipName" class="input__label-content input__label-content--hoshi">请填写您的昵称</span>
+    </label>
+</span>
+<br>
+             
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="text"  id="address" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="address">
+        
+        <span id="tipAddress" class="input__label-content input__label-content--hoshi">请填写您的住址</span>
+    </label>
+</span>
+<br>
+             
+                    <span class="input input--hoshi">
+    <input class="input__field input__field--hoshi"  type="text"  id="description" />
+    <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="description">
+        
+        <span id="tipDescription" class="input__label-content input__label-content--hoshi">请填写您的个人描述</span>
+    </label>
+</span>
+<br>
+             
+        </div>
+       <a id="register" class="button button-3d button-primary button-rounded">注册</a> 
+<br> <br>
+        <span class="title coachTip">教练注册，请联系系统管理员</span> <br> <br>
+    </div>  
+<script type="text/javascript" src="../common.js?8f9628ff17497e9cb8e6"></script><script type="text/javascript" src="../js/account/register.js?8f9628ff17497e9cb8e6"></script></body>
+</html>

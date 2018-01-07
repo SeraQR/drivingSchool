@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<%- include drivingSchool/UI/partials/common/header -%>
+<body>
+    <%- include drivingSchool/UI/partials/main/loader -%>
+    <div class="wrap" id="studentWrap">
+        <%- include drivingSchool/UI/partials/main/head -%>
+        <%- include drivingSchool/UI/partials/main/affiche -%>
+        <%- include drivingSchool/UI/partials/main/user -%>
+        <div id="main" class="body-wrap">
+            <%- include drivingSchool/UI/partials/main/greeting -%>
+               <% var column = [ [ {
+                    id:"modifyInfo", href:"../account/register.html", text:"修改资料"
+                },{
+                    id:"sentMessage", href:"../account/register.html", text:"已发消息"
+                },{
+                    id:"suggestion", href:"../account/register.html", text:"意见建议"
+                } ],[{
+                    id:"modifyPwd", href:"../account/register.html", text:"修改密码"
+                },{
+                    id:"sendMessage", href:"../account/register.html", text:"预约教练" 
+                },{
+                    id:"onlineExam", href:"../account/register.html", text:"在线考试"
+                }],[{
+                    id:"about", href:"../account/register.html", text:"关于系统"
+                },{
+                    id:"coachList", href:"../account/register.html", text:"教练列表"
+                },{
+                    id:"exit", href:"../account/register.html", text:"退出" }]];
+            %>
+            <%- include drivingSchool/UI/partials/main/main -%>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -103,10 +103,12 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="BLL\ajax\Monitor.ashx" />
     <None Include="packages.config" />
     <Content Include="BLL\js\component\ajax\account.js" />
     <Content Include="BLL\js\component\ajax\affiche.js" />
     <Content Include="BLL\js\component\ajax\coach.js" />
+    <Content Include="BLL\js\component\ajax\error.js" />
     <Content Include="BLL\js\component\ajax\message.js" />
     <Content Include="BLL\js\component\ajax\student.js" />
     <Content Include="BLL\js\component\ajax\suggestion.js" />
@@ -168,13 +170,13 @@
     <Content Include="public\student\sendMessage.html" />
     <Content Include="public\student\sentMessage.html" />
     <Content Include="public\student\student.html" />
-    <Content Include="UI\account\changeInfo.html" />
-    <Content Include="UI\account\changePwd.html" />
-    <Content Include="UI\account\forgetPwd.html" />
-    <Content Include="UI\coach\coach.html" />
-    <Content Include="UI\coach\messageList.html" />
-    <Content Include="UI\coach\studentList.html" />
-    <Content Include="UI\information\about.html" />
+    <None Include="UI\account\changeInfo.ejs" />
+    <None Include="UI\account\changePwd.ejs" />
+    <None Include="UI\account\forgetPwd.ejs" />
+    <None Include="UI\coach\coach.ejs" />
+    <None Include="UI\coach\messageList.ejs" />
+    <None Include="UI\coach\studentList.ejs" />
+    <None Include="UI\information\about.ejs" />
     <Content Include="UI\style\form\login.less" />
     <Content Include="UI\style\component\main\affiche.less" />
     <Content Include="UI\style\component\form\button.less" />
@@ -198,7 +200,6 @@
     <Content Include="UI\style\component\common\style.less" />
     <Content Include="UI\style\component\common\variable.less" />
     <Content Include="UI\style\form\forgetPwd.less" />
-    <Content Include="UI\style\form\changePwd.less" />
     <Content Include="UI\style\main\coach.less" />
     <Content Include="UI\style\form\changeInfo.less" />
     <Content Include="UI\style\component\common\shake.less" />
@@ -220,13 +221,13 @@
     <Content Include="Data\js\babel.js" />
     <Content Include="Data\js\jQuery.js" />
     <Content Include="Data\js\less.js" />
-    <Content Include="UI\account\login.html" />
-    <Content Include="UI\account\register.html" />
-    <Content Include="UI\student\coachList.html" />
-    <Content Include="UI\student\onlineExam.html" />
-    <Content Include="UI\student\sendMessage.html" />
-    <Content Include="UI\student\sentMessage.html" />
-    <Content Include="UI\student\student.html" />
+    <None Include="UI\account\login.ejs" />
+    <None Include="UI\account\register.ejs" />
+    <None Include="UI\student\coachList.ejs" />
+    <None Include="UI\student\onlineExam.ejs" />
+    <None Include="UI\student\sendMessage.ejs" />
+    <None Include="UI\student\sentMessage.ejs" />
+    <None Include="UI\student\student.ejs" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +239,9 @@
     </Compile>
     <Compile Include="BLL\ajax\Coach.ashx.cs">
       <DependentUpon>Coach.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\ajax\Monitor.ashx.cs">
+      <DependentUpon>Monitor.ashx</DependentUpon>
     </Compile>
     <Compile Include="BLL\ajax\Message.ashx.cs">
       <DependentUpon>Message.ashx</DependentUpon>
@@ -251,19 +255,24 @@
     <Compile Include="DAL\Account.cs" />
     <Compile Include="DAL\Affiche.cs" />
     <Compile Include="DAL\Coach.cs" />
+    <Compile Include="DAL\Error.cs" />
     <Compile Include="DAL\Message.cs" />
     <Compile Include="DAL\SQL.cs" />
     <Compile Include="DAL\Student.cs" />
     <Compile Include="DAL\Suggestion.cs" />
-    <Compile Include="obj\Model\AccountModel.cs" />
-    <Compile Include="obj\Model\AfficheModel.cs" />
-    <Compile Include="obj\Model\MessageModel.cs" />
-    <Compile Include="obj\Model\SuggestionModel.cs" />
+    <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\AfficheModel.cs" />
+    <Compile Include="Model\ErrorModel.cs" />
+    <Compile Include="Model\MessageModel.cs" />
+    <Compile Include="Model\SuggestionModel.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\BLL\ajax\" />
-    <Folder Include="Model\" />
+    <Folder Include="UI\_partial\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

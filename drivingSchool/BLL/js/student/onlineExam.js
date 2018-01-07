@@ -15,9 +15,7 @@ let oldTure;
 let index = 0;
 
 $(() => {
-    Promise.all([getOldTure(), loadQuestion()]).then(() => {
-        _.Init();
-    });
+    Promise.all([getOldTure(), loadQuestion()]).then(_.Init);
 });
 
 function loadQuestion() {

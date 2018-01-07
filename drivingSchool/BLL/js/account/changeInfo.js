@@ -26,8 +26,8 @@ $(() => {
     _.Init("50px 100px 0px 100px");
 });
 
-jQName.blur(() => {
-    user.name = $.trim(jQName.val());
+jQname.blur(() => {
+    user.name = $.trim(jQname.val());
     if (user.name !== "" && !user.singleName) {
         tipName.hide("slow");
         if (ac.hasInfo("name", "student",user.name) || ac.hasInfo("name", "coach",user.name)) {

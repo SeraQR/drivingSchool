@@ -27,7 +27,6 @@ C:\Users\Simon\Desktop\drivingSchool\drivingSchool\bin\roslyn\VBCSCompiler.exe.c
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\bin\drivingSchool.dll.config
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\bin\drivingSchool.dll
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\bin\drivingSchool.pdb
-C:\Users\Simon\Desktop\drivingSchool\drivingSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.csproj.CoreCompileInputs.cache
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.dll
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.pdb
