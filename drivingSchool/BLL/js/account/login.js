@@ -60,7 +60,6 @@ function Login() {
 account.blur(() => {
     user.act = $.trim(account.val());
     if (user.act !== "" && !user.userLogin) {
-
         tipAccount.hide("slow");
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             user.userLogin = false;
@@ -89,9 +88,6 @@ account.blur(() => {
             tipAccount.show("slow");
         }
     }
-});
-account.change(() => {
-    user.userLogin = false;
 });
 password.blur(() => {
     user.pwd = $.trim(password.val());
@@ -123,9 +119,6 @@ password.blur(() => {
             tipPassword.show("slow");
         }
     }
-});
-password.change(() => {
-    user.pwdLogin = false;
 });
 coach.change(() => {
     user.isCoach = coach.prop("checked");

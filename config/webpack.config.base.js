@@ -14,21 +14,20 @@ config.HTMLDirs.forEach((page) => {
         template: path.resolve(__dirname, `${config.templatePath}${page}.ejs`),
         inject: "body",
         title: "驾校管理系统",
-        favicon:path.resolve(__dirname, `${config.imgEntryPath}`),
         chunks: ["common", page],
-        hash:true
-        // minify: {
-        //     removeComments: true,
-        //     collapseWhitespace: true,
-        //     removeRedundantAttributes: true,
-        //     useShortDoctype: true,
-        //     removeEmptyAttributes: true,
-        //     removeStyleLinkTypeAttributes: true,
-        //     keepClosingSlash: true,
-        //     minifyJS: true,
-        //     minifyCSS: true,
-        //     minifyURLs: true
-        // }
+        hash:true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true
+        }
     });
     HTMLPlugins.push(htmlPlugin);
     Entries[page] = path.resolve(__dirname, `${config.jsEntryPath}${page}.js`);

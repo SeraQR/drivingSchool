@@ -14,32 +14,31 @@ const userName = sessionStorage.getItem("sender");
 $(() => {
     getCoachName();
     _.Init("50px 100px 0px 100px");
-});
-
-$(".drop .option").click(function () {
-    val = $(this).attr("data-value");
-    let
-        $drop = $(".drop"),
-        prevActive = $(".drop .option.active").attr("data-value"),
-        options = $(".drop .option").length;
-    $drop.find(".option.active").addClass("mini-hack");
-    $drop.toggleClass("visible");
-    $drop.removeClass("withBG");
-    $(this).css("top");
-    $drop.toggleClass("opacity");
-    $(".mini-hack").removeClass("mini-hack");
-    if ($drop.hasClass("visible")) {
-        setTimeout(function () {
-            $drop.addClass("withBG");
-        }, 400 + options * 100);
-    }
-    if (val !== "placeholder" || prevActive === "placeholder") {
-        if (_.tip.text().indexOf("教练") !== -1) {
-            _.showTip("");
+    $(".drop .option").click(function () {
+        val = $(this).attr("data-value");
+        let
+            $drop = $(".drop"),
+            prevActive = $(".drop .option.active").attr("data-value"),
+            options = $(".drop .option").length;
+        $drop.find(".option.active").addClass("mini-hack");
+        $drop.toggleClass("visible");
+        $drop.removeClass("withBG");
+        $(this).css("top");
+        $drop.toggleClass("opacity");
+        $(".mini-hack").removeClass("mini-hack");
+        if ($drop.hasClass("visible")) {
+            setTimeout(function () {
+                $drop.addClass("withBG");
+            }, 400 + options * 100);
         }
-        $(".drop .option").removeClass("active");
-        $(this).addClass("active");
-    }
+        if (val !== "placeholder" || prevActive === "placeholder") {
+            if (_.tip.text().indexOf("教练") !== -1) {
+                _.showTip("");
+            }
+            $(".drop .option").removeClass("active");
+            $(this).addClass("active");
+        }
+    });
 });
 
 function getCoachName() {

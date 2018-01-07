@@ -33,11 +33,11 @@ const user = {
     rgtName: false,
     rgtPwd: false
 };
-
+const tip = $("#tip");
 function showTip(key, info) {
-    if (_.tip.text().indexOf(key) !== -1 || $.trim(_.tip.text()) === "") {
-        _.tip.text(info);
-        info ? _.tip.fadeIn(500) : _.tip.fadeOut("slow");
+    if (tip.text().indexOf(key) !== -1 || $.trim(tip.text()) === "") {
+        tip.text(info);
+        info ? tip.fadeIn(500) : tip.fadeOut("slow");
     }
 }
 $(() => {
@@ -45,9 +45,9 @@ $(() => {
 });
 
 $("input").keypress(e => {
-    if (_.tip.text().indexOf("错误") !== -1) {
-        _.tip.text(" ");
-        _.tip.fadeOut("slow");
+    if (tip.text().indexOf("错误") !== -1) {
+        tip.text(" ");
+        tip.fadeOut("slow");
     }
     return e.keyCode !== 32;
 });
@@ -57,18 +57,18 @@ account.blur(() => {
 
         tipAccount.hide("slow");
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
-            _.showTip("账号", "您的账号格式错误！");
+            showTip("账号", "您的账号格式错误！");
             user.rgtAct = false;
         } else if (ac.hasInfo("account", "student","",user.act) || ac.hasInfo("account", "coach","",user.act)) {
             user.rgtAct = false;
-            _.showTip("账号", "账号已经存在！");
+            showTip("账号", "账号已经存在！");
         } else {
             user.rgtAct = true;
-            _.showTip("账号", "");
+            showTip("账号", "");
         }
     } else {
         user.rgtAct = false;
-        _.showTip("账号", "");
+        showTip("账号", "");
         if (user.act === "") {
             tipAccount.show("slow");
         }
@@ -81,14 +81,14 @@ password.blur(() => {
         tipPassword.hide("slow");
         if (!regBox.Pwd.test(user.pwd)) {
             user.rgtPwd = false;
-            _.showTip("密码", "您的密码格式错误！");
+            showTip("密码", "您的密码格式错误！");
         } else {
             user.rgtPwd = true;
-            _.showTip("密码", "");
+            showTip("密码", "");
         }
     } else {
         user.rgtPwd = false;
-        _.showTip("密码", "");
+        showTip("密码", "");
         if (user.pwd === "") {
             tipPassword.show("slow");
         }
@@ -132,14 +132,14 @@ jQname.blur(() => {
         tipName.hide("slow");
         if (ac.hasInfo("name", "student",user.name) || ac.hasInfo("name", "coach",user.name)) {
             user.rgtName = false;
-            _.showTip("昵称", "昵称已经存在！");
+            showTip("昵称", "昵称已经存在！");
         } else {
             user.rgtName = true;
-            _.showTip("昵称", "");
+            showTip("昵称", "");
         }
     } else {
         user.rgtName = false;
-        _.showTip("昵称", "");
+        showTip("昵称", "");
         if (user.name === "") {
             tipName.show("slow");
         }
@@ -157,19 +157,19 @@ $("#register").click(register);
 
 function register() {
     if (!_.allHaveContent(user)) {
-        _.showTip("错误", "发生错误，不能有空值！");
+        showTip("错误", "发生错误，不能有空值！");
     } else if (!user.rgtAct) {
-        _.showTip("错误", "账号内容有错误！");
+        showTip("错误", "账号内容有错误！");
     } else if (!user.rgtName) {
-        _.showTip("错误", "发生错误，昵称已经存在！");
+        showTip("错误", "发生错误，昵称已经存在！");
     } else if (!user.rgtPwd) {
-        _.showTip("错误", "密码格式发生错误！");
+        showTip("错误", "密码格式发生错误！");
     } else {
         if (ac.register(user)) {
-            _.showTip("注册", "注册成功！");
+            showTip("注册", "注册成功！");
             setTimeout(() => location.href = "../student/student.html", 800);
         } else {
-            _.showTip("因不可抗因素注册失败~");
+            showTip("因不可抗因素注册失败~");
         }
     }
 

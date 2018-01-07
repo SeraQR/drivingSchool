@@ -21,8 +21,8 @@ export function getMessageList(type, name, newMessageNum) {
     let returnValue = false;
     $.ajax({
         url: messageAjax,
-        type: "POST",
         async: false,
+        type: "POST",
         data: {
             "key": "getMessageList",
             "type": type,

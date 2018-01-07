@@ -3,8 +3,8 @@ export function hasInfo(type, table,name = "",account = "",password = "") {
     let returnValue = false;
     $.ajax({
         url: accountAjax,
-        async: false,
         type: "POST",
+        async: false,
         data: {
             "key": "hasInfo",
             "table": table,
@@ -24,8 +24,8 @@ export function changeInfo(table, user) {
     let returnValue = false;
     $.ajax({
         url: accountAjax,
-        async: false,
         type: "POST",
+        async: false,
         data: {
             "key": "changeInfo",
             "table": table,
@@ -45,8 +45,8 @@ export function changePwd(table, account,password) {
     let returnValue = false;
     $.ajax({
         url: accountAjax,
-        async: false,
         type: "POST",
+        async: false,
         data: {
             "key": "changePwd",
             "table": table,
@@ -64,8 +64,8 @@ export function getQuestionAnswer(table,account){
     let returnValue = false;
     $.ajax({
         url: accountAjax,
-        async: false,
         type: "POST",
+        async: false,
         data: {
             "key":"getQuestionAnswer",
             "table": table,
@@ -80,8 +80,8 @@ export function register(user){
     let returnValue = false;
     $.ajax({
         url: accountAjax,
-        async: false,
         type: "POST",
+        async: false,
         data: {
             "key": "register",
             "table": "student",

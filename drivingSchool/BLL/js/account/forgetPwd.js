@@ -57,7 +57,7 @@ coach.change(() => {
             _.showTip("该账号不存在！");
         } else {
             user.rgtAct = true;
-            _.showTip("信息正确,可以登录！");
+            _.showTip("信息正确！");
         }
     }
 
@@ -68,12 +68,11 @@ $(document).keydown(e => {
     }
 });
 
-$("#forget").click(getQuestionAnswer);
+$("#forgetPwd").click(getQuestionAnswer);
 
 function getQuestionAnswer() {
 
     if (user.rgtAct) {
-
         let question, answer;
 
         let results = ac.getQuestionAnswer(user.isCoach ? "coach" : "student", user.act);

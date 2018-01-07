@@ -4,8 +4,8 @@ export function getAllInformation(type) {
     let returnValue = false;
     $.ajax({
         url: coachAjax,
-        async: false,
         type: "POST",
+        async: false,
         data: {
             "key": "getAllInformation",
             "type": type

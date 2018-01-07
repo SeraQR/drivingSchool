@@ -4,7 +4,6 @@ export function uploadError(error) {
     $.ajax({
         url: errorAjax,
         type: "POST",
-        async: false,
         data: {
             "errorMessage": error.errorMessage,
             "scriptURI": error.scriptURI,
