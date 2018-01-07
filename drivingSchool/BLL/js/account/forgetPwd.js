@@ -27,7 +27,7 @@ account.blur(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("您的账号格式错误！");
             user.rgtAct = false;
-        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student","",user.act)) {
+        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
             user.rgtAct = false;
             _.showTip("该账号不存在！");
         } else {
@@ -52,7 +52,7 @@ coach.change(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("您的账号格式错误！");
             user.rgtAct = false;
-        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student","",user.act)) {
+        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
             user.rgtAct = false;
             _.showTip("该账号不存在！");
         } else {
@@ -64,7 +64,17 @@ coach.change(() => {
 });
 $(document).keydown(e => {
     if (e.keyCode === 13) {
-        getQuestionAnswer();
+        user.act = $.trim(account.val());
+        if (regBox.Email.test(user.act) || regBox.Mobile.test(user.act)) {
+            if (ac.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
+                getQuestionAnswer();
+            }else{
+                _.showTip("该账号不存在！");
+            }
+        }else{
+            _.showTip("您的账号格式错误！");
+        }
+
     }
 });
 
@@ -76,10 +86,10 @@ function getQuestionAnswer() {
         let question, answer;
 
         let results = ac.getQuestionAnswer(user.isCoach ? "coach" : "student", user.act);
-        if(results){
+        if (results) {
             question = results[0];
             answer = results[1];
-            
+
             let replyAnswer = prompt(`密保问题：${ question}`, "请输入密码答案");
             if (replyAnswer === answer) {
                 sessionStorage.setItem("account", user.act);
@@ -88,10 +98,10 @@ function getQuestionAnswer() {
             } else {
                 _.showTip("答案错误，请重试！");
             }
-        }else{
+        } else {
             _.showTip("获取密保问题失败~");
         }
-       
+
     } else {
         _.showTip("请输入正确的账号！");
     }

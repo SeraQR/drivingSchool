@@ -67,6 +67,7 @@ message.blur(() => {
 
 $(document).keydown(e => {
     if (e.keyCode === 13) {
+        content = $.trim(message.val());
         send();
     }
 });

@@ -37,11 +37,9 @@ namespace drivingSchool.BLL.ajax
         {
             string table = context.Request.Form["table"];
             string account = context.Request.Form["account"];
-            string name = context.Request.Form["name"];
             string address = context.Request.Form["address"];
             string description = context.Request.Form["description"];
-            AccountModel user = new AccountModel(account, "", name, "", "", address, description);
-            if (Account.changeInfo(table, user))
+            if (Account.changeInfo(table, account,address, description))
             {
                 context.Response.Write("true");
             }

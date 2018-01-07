@@ -2,10 +2,8 @@
 import * as _ from "js/form/form";
 import * as ac from "js/ajax/account";
 import {
-    jQname,
     address,
     description,
-    tipName,
     tipAddress,
     tipDescription,
     act,
@@ -15,10 +13,8 @@ import {
 const user = {
     act,
     isCoach,
-    name: "",
     address: "",
-    description: "",
-    singleName: false
+    description: ""
 };
 
 
@@ -26,25 +22,6 @@ $(() => {
     _.Init("50px 100px 0px 100px");
 });
 
-jQname.blur(() => {
-    user.name = $.trim(jQname.val());
-    if (user.name !== "" && !user.singleName) {
-        tipName.hide("slow");
-        if (ac.hasInfo("name", "student",user.name) || ac.hasInfo("name", "coach",user.name)) {
-            user.singleName = false;
-            _.showTip("昵称已经存在！");
-        } else {
-            user.singleName = true;
-            _.showTip("");
-        }
-    } else {
-        user.singleName = false;
-        _.showTip("");
-        if (user.name === "") {
-            tipName.show("slow");
-        }
-    }
-});
 address.blur(() => {
     user.address = $.trim(address.val());
     if (user.address !== "") {
@@ -63,6 +40,8 @@ description.blur(() => {
 });
 $(document).keydown(e => {
     if (e.keyCode === 13) {
+        user.description = $.trim(description.val());
+        user.address = $.trim(address.val());
         changeInfo();
     }
 });
@@ -72,8 +51,6 @@ $("#changeInfo").click(changeInfo);
 function changeInfo() {
     if (!_.allHaveContent(user)) {
         _.showTip("不能有空值！");
-    } else if (!user.singleName) {
-        _.showTip("昵称已经存在！");
     } else {
         if (ac.changeInfo(isCoach ? "coach" : "student", user)) {
             _.showTip("修改成功！");

@@ -7,8 +7,8 @@ import {
     password,
     passwordAgain,
     tipPasswordAgain,
-    isCoach,
-    act
+    act,
+    isCoach
 } from "js/common/variable";
 
 $(() => {
@@ -65,7 +65,13 @@ passwordAgain.blur(() => {
 });
 $(document).keydown(e => {
     if (e.keyCode === 13) {
-        changePwd();
+        user.pwd = $.trim(password.val());
+        user.pwdAgain = $.trim(passwordAgain.val());
+        if(user.pwd !== "" && user.pwdAgain !== "" && user.pwd === user.pwdAgain && regBox.Pwd.test(user.pwdAgain) && regBox.Pwd.test(user.pwd)){
+            changePwd();
+        }else{
+            _.showTip("请确保密码输入正确！");
+        }
     }
 });
 
@@ -75,7 +81,7 @@ function changePwd() {
     if (user.isOK) {
         if (ac.changePwd(isCoach ? "coach" : "student", act, user.pwd)) {
             _.showTip("密码修改成功！");
-            setTimeout(() => location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`, 800);
+            setTimeout(() => location.href = `../${isCoach ? "coach/coach" : "student/student"}.html`, 800);
         } else {
             _.showTip("因不可抗元素，修改失败！");
         }

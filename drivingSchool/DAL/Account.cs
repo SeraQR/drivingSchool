@@ -62,9 +62,9 @@ namespace drivingSchool.DAL
             string command = $"update {table} set password = '{newPassword}' where account = '{account}'";
             return SQL.Excute(command);
         }
-        static public bool changeInfo(string table,AccountModel user)
+        static public bool changeInfo(string table,string account,string address,string description)
         {
-            string command = $"update {table} set name = '{user.name}',address = '{user.address}',description = '{user.description}' where account = '{user.account}'";
+            string command = $"update {table} set address = '{address}',description = '{description}' where account = '{account}'";
             return SQL.Excute(command);
         }
     }

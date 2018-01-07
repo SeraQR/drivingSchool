@@ -32,7 +32,7 @@ $(() => {
     if (lAccount && !sessionStorage.getItem("backLogin")) {
         sessionStorage.setItem("account", lAccount);
         sessionStorage.setItem("isCoach", lIsCoach);
-        location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`;
+        location.href = `../${lIsCoach ? "coach/coach" : "student/student"}.html`;
     } else {
         _.Init("50px 50px 10px 50px");
     }
@@ -158,6 +158,8 @@ $(document).keydown(e => {
             user.pwdLogin = true;
             user.userLogin = true;
             Login();
+        }else{
+            _.showTip("请输入正确的信息！");
         }
     }
 });

@@ -15,7 +15,6 @@ config.HTMLDirs.forEach((page) => {
         inject: "body",
         title: "驾校管理系统",
         chunks: ["common", page],
-        hash:true,
         minify: {
             removeComments: true,
             collapseWhitespace: true,

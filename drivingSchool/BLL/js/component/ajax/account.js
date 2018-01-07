@@ -30,7 +30,6 @@ export function changeInfo(table, user) {
             "key": "changeInfo",
             "table": table,
             "account": user.act,
-            "name": user.name,
             "address": user.address,
             "description": user.description
         },

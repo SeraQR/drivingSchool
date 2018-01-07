@@ -34,6 +34,7 @@ const user = {
     rgtPwd: false
 };
 const tip = $("#tip");
+
 function showTip(key, info) {
     if (tip.text().indexOf(key) !== -1 || $.trim(tip.text()) === "") {
         tip.text(info);
@@ -59,7 +60,7 @@ account.blur(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             showTip("账号", "您的账号格式错误！");
             user.rgtAct = false;
-        } else if (ac.hasInfo("account", "student","",user.act) || ac.hasInfo("account", "coach","",user.act)) {
+        } else if (ac.hasInfo("account", "student", "", user.act) || ac.hasInfo("account", "coach", "", user.act)) {
             user.rgtAct = false;
             showTip("账号", "账号已经存在！");
         } else {
@@ -130,7 +131,7 @@ jQname.blur(() => {
     user.name = $.trim(jQname.val());
     if (user.name !== "" && !user.rgtName) {
         tipName.hide("slow");
-        if (ac.hasInfo("name", "student",user.name) || ac.hasInfo("name", "coach",user.name)) {
+        if (ac.hasInfo("name", "student", user.name) || ac.hasInfo("name", "coach", user.name)) {
             user.rgtName = false;
             showTip("昵称", "昵称已经存在！");
         } else {
@@ -149,6 +150,7 @@ jQname.blur(() => {
 
 $(document).keydown(e => {
     if (e.keyCode === 13) {
+        user.description = $.trim(description.val());
         register();
     }
 });
@@ -167,6 +169,8 @@ function register() {
     } else {
         if (ac.register(user)) {
             showTip("注册", "注册成功！");
+            sessionStorage.setItem("account", user.act);
+            sessionStorage.setItem("isCoach", "false");
             setTimeout(() => location.href = "../student/student.html", 800);
         } else {
             showTip("因不可抗因素注册失败~");
