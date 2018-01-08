@@ -23,11 +23,7 @@ namespace drivingSchool.DAL
             {
                 data += read["sender"] + "=" + read["content"] + "=" + read["addTime"] + ";";
             }
-            if (type == "onlyNew")
-            {
-                SQL.Dispose();
-                Coach.initZero(name, "unread");
-            }
+            Coach.initZero(name, "unread");
             SQL.Dispose();
             return data;
         }

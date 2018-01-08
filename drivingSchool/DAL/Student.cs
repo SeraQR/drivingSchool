@@ -44,11 +44,7 @@ namespace drivingSchool.DAL
             {
                 data += read["account"] + "=" + read["name"] + "=" + read["address"] + "=" + read["description"] + "=" + read["addTime"] + ";";
             }
-            if (type == "onlyNew")
-            {
-                SQL.Dispose();
-                Coach.initZero(account, "newstudent");
-            }
+            Coach.initZero(account, "newstudent");
             SQL.Dispose();
             return data;
         }
