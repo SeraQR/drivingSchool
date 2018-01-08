@@ -1,6 +1,10 @@
 ﻿import "formStyle/forgetPwd";
-import * as _ from "js/form/form";
-import * as ac from "js/ajax/account";
+import {
+    Form as _
+} from "js/form/form";
+import {
+    Account
+} from "js/ajax/account";
 import {
     regBox,
     tipPassword,
@@ -67,10 +71,14 @@ $(document).keydown(e => {
     if (e.keyCode === 13) {
         user.pwd = $.trim(password.val());
         user.pwdAgain = $.trim(passwordAgain.val());
-        if(user.pwd !== "" && user.pwdAgain !== "" && user.pwd === user.pwdAgain && regBox.Pwd.test(user.pwdAgain) && regBox.Pwd.test(user.pwd)){
-            changePwd();
-        }else{
-            _.showTip("请确保密码输入正确！");
+        if (user.pwd === user.pwdAgain) {
+            if (user.pwd !== "" && regBox.Pwd.test(user.pwd)) {
+                changePwd();
+            } else {
+                _.showTip("请确保密码输入正确！");
+            }
+        } else {
+            _.showTip("您的两次密码内容不一致！");
         }
     }
 });
@@ -79,7 +87,7 @@ $("#changePwd").click(changePwd);
 
 function changePwd() {
     if (user.isOK) {
-        if (ac.changePwd(isCoach ? "coach" : "student", act, user.pwd)) {
+        if (Account.changePwd(isCoach ? "coach" : "student", act, user.pwd)) {
             _.showTip("密码修改成功！");
             setTimeout(() => location.href = `../${isCoach ? "coach/coach" : "student/student"}.html`, 800);
         } else {

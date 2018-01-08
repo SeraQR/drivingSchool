@@ -1,5 +1,5 @@
 ﻿import "mainStyle/student";
-import * as _ from "js/main/main";
+import { Main as _ } from "js/main/main";
 
 $(() => {
     $("#affiche").text("本校目前报名费只要998哦！");

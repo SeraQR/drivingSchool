@@ -1,7 +1,6 @@
 ﻿import "mainStyle/coach";
-import * as af from "js/ajax/affiche";
-import * as co from "js/ajax/coach";
-import * as _ from "js/main/main";
+import { Affiche } from "js/ajax/affiche";
+import { Main as _ } from "js/main/main";
 import { act } from "js/common/variable";
 
 let newStudentNum = 0;
@@ -20,6 +19,7 @@ $(() => {
         newStudentNum = parseInt(results[3]);
         newMessageNum = parseInt(results[4]);
         userName = results[0];
+        sessionStorage.setItem("userName",userName);
     });
 });
 $("#exit").click(() => {
@@ -30,7 +30,7 @@ $("#exit").click(() => {
 $("#releaseNews").click(() => {
     const content = $.trim(prompt("请输入新的公告内容"));
     if (content !== "") {
-        if (af.setAffiche(act, content, userName)) {
+        if (Affiche.setAffiche(act, content, userName)) {
             _.getAffiche();
         } else {
             alert("发布公告失败~");

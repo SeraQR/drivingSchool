@@ -1,6 +1,6 @@
 ﻿import "formStyle/forgetPwd";
-import * as _ from "js/form/form";
-import * as ac from "js/ajax/account";
+import { Form as _ } from "js/form/form";
+import { Account } from "js/ajax/account";
 import {
     regBox,
     tipAccount,
@@ -27,7 +27,7 @@ account.blur(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("您的账号格式错误！");
             user.rgtAct = false;
-        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
+        } else if (!Account.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
             user.rgtAct = false;
             _.showTip("该账号不存在！");
         } else {
@@ -52,7 +52,7 @@ coach.change(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             _.showTip("您的账号格式错误！");
             user.rgtAct = false;
-        } else if (!ac.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
+        } else if (!Account.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
             user.rgtAct = false;
             _.showTip("该账号不存在！");
         } else {
@@ -66,7 +66,7 @@ $(document).keydown(e => {
     if (e.keyCode === 13) {
         user.act = $.trim(account.val());
         if (regBox.Email.test(user.act) || regBox.Mobile.test(user.act)) {
-            if (ac.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
+            if (Account.hasInfo("account", user.isCoach ? "coach" : "student", "", user.act)) {
                 getQuestionAnswer();
             }else{
                 _.showTip("该账号不存在！");
@@ -85,7 +85,7 @@ function getQuestionAnswer() {
     if (user.rgtAct) {
         let question, answer;
 
-        let results = ac.getQuestionAnswer(user.isCoach ? "coach" : "student", user.act);
+        let results = Account.getQuestionAnswer(user.isCoach ? "coach" : "student", user.act);
         if (results) {
             question = results[0];
             answer = results[1];

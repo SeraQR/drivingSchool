@@ -8,6 +8,7 @@ export const description = $("#description");
 export const passwordAgain = $("#passwordAgain");
 export const coach = $("#coach");
 export const message = $("#message");
+export const tip = $("#tip");
 
 export const tipAccount = $("#tipAccount");
 export const tipPassword = $("#tipPassword");
@@ -18,12 +19,30 @@ export const tipAddress = $("#tipAddress");
 export const tipDescription = $("#tipDescription");
 export const tipPasswordAgain = $("#tipPasswordAgain");
 export const tipMessage = $("#tipMessage");
+export const OldTureNum = $("#oldTureNum");
+export const NowTureNum = $("#NowTureNum");
+
+export const DQuestion = $(".question");
+export const optionA = $(".optionA");
+export const optionB = $(".optionB");
+export const optionC = $(".optionC");
+export const optionD = $(".optionD");
+export const radio = $("input[type='radio']");
 
 export const act = sessionStorage.getItem("account");
+export const userName = sessionStorage.getItem("userName");
 export const isCoach = sessionStorage.getItem("isCoach") === "true";
 
 export const newMessageNum = sessionStorage.getItem("newMessageNum");
 export const newStudentNum = sessionStorage.getItem("newStudentNum");
+
+export const accountAjax = "../../../BLL/ajax/Account.ashx";
+export const afficheAjax = "../../../BLL/ajax/Affiche.ashx";
+export const coachAjax = "../../../BLL/ajax/Coach.ashx";
+export const errorAjax = "../../../BLL/ajax/Monitor.ashx";
+export const messageAjax = "../../../BLL/ajax/Message.ashx";
+export const studentAjax = "../../../BLL/ajax/Student.ashx";
+export const suggestionAjax = "../../../BLL/ajax/Suggestion.ashx";
 
 export const regBox = {
     Email: /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/,
@@ -68,10 +87,10 @@ class cError {
                 浏览器信息：${this.userAgent}`;
     }
 }
-import * as er from "js/ajax/error";
+import {Error} from "js/ajax/error";
 export function monitor(){
     window.onerror = (errorMessage, scriptURI, lineNumber,columnNumber,errorObj)=> {
         const newError = new cError(errorMessage, scriptURI, lineNumber,columnNumber,errorObj);
-        er.uploadError(newError);
+        Error.uploadError(newError);
     };
 }

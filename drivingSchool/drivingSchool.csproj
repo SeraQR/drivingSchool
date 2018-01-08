@@ -69,7 +69,6 @@
     <Content Include="bin\drivingSchool.dll" />
     <Content Include="bin\drivingSchool.pdb" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\csi.exe" />
     <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
@@ -136,7 +135,6 @@
     <Content Include="Data\DB\SQL2016\drivingSchool_log.ldf">
       <DependentUpon>drivingSchool.mdf</DependentUpon>
     </Content>
-    <Content Include="Data\js\exam.js" />
     <Content Include="public\account\changeInfo.html" />
     <Content Include="public\account\changePwd.html" />
     <Content Include="public\account\forgetPwd.html" />
@@ -146,10 +144,21 @@
     <Content Include="public\coach\messageList.html" />
     <Content Include="public\coach\studentList.html" />
     <Content Include="public\common.js" />
-    <Content Include="public\css\styles.css" />
+    <Content Include="public\css\account\changeInfo.css" />
+    <Content Include="public\css\account\changePwd.css" />
+    <Content Include="public\css\account\forgetPwd.css" />
+    <Content Include="public\css\account\login.css" />
+    <Content Include="public\css\account\register.css" />
+    <Content Include="public\css\coach\coach.css" />
+    <Content Include="public\css\coach\messageList.css" />
+    <Content Include="public\css\coach\studentList.css" />
+    <Content Include="public\css\information\about.css" />
+    <Content Include="public\css\student\coachList.css" />
+    <Content Include="public\css\student\onlineExam.css" />
+    <Content Include="public\css\student\sendMessage.css" />
+    <Content Include="public\css\student\sentMessage.css" />
+    <Content Include="public\css\student\student.css" />
     <Content Include="public\favicon.ico" />
-    <Content Include="public\img\default.cur" />
-    <Content Include="public\img\pointer.cur" />
     <Content Include="public\information\about.html" />
     <Content Include="public\js\account\changeInfo.js" />
     <Content Include="public\js\account\changePwd.js" />
@@ -231,9 +240,6 @@
     <Content Include="Data\img\default.cur" />
     <Content Include="Data\img\favicon.ico" />
     <Content Include="Data\img\pointer.cur" />
-    <Content Include="Data\js\babel.js" />
-    <Content Include="Data\js\jQuery.js" />
-    <Content Include="Data\js\less.js" />
     <None Include="UI\account\login.ejs" />
     <None Include="UI\account\register.ejs" />
     <None Include="UI\student\coachList.ejs" />
@@ -285,7 +291,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\BLL\ajax\" />
-    <Folder Include="UI\_partial\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

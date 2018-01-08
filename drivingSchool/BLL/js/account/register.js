@@ -1,5 +1,11 @@
 ﻿import "formStyle/register";
 import {
+    Form as _
+} from "js/form/form";
+import {
+    Account
+} from "js/ajax/account";
+import {
     account,
     password,
     question,
@@ -16,10 +22,6 @@ import {
     tipDescription,
     regBox
 } from "js/common/variable";
-
-import * as _ from "js/form/form";
-import * as ac from "js/ajax/account";
-
 
 const user = {
     act: "",
@@ -60,7 +62,7 @@ account.blur(() => {
         if (!regBox.Email.test(user.act) && !regBox.Mobile.test(user.act)) {
             showTip("账号", "您的账号格式错误！");
             user.rgtAct = false;
-        } else if (ac.hasInfo("account", "student", "", user.act) || ac.hasInfo("account", "coach", "", user.act)) {
+        } else if (Account.hasInfo("account", "student", "", user.act) || Account.hasInfo("account", "coach", "", user.act)) {
             user.rgtAct = false;
             showTip("账号", "账号已经存在！");
         } else {
@@ -131,7 +133,7 @@ jQname.blur(() => {
     user.name = $.trim(jQname.val());
     if (user.name !== "" && !user.rgtName) {
         tipName.hide("slow");
-        if (ac.hasInfo("name", "student", user.name) || ac.hasInfo("name", "coach", user.name)) {
+        if (Account.hasInfo("name", "student", user.name) || Account.hasInfo("name", "coach", user.name)) {
             user.rgtName = false;
             showTip("昵称", "昵称已经存在！");
         } else {
@@ -167,7 +169,7 @@ function register() {
     } else if (!user.rgtPwd) {
         showTip("错误", "密码格式发生错误！");
     } else {
-        if (ac.register(user)) {
+        if (Account.register(user)) {
             showTip("注册", "注册成功！");
             sessionStorage.setItem("account", user.act);
             sessionStorage.setItem("isCoach", "false");

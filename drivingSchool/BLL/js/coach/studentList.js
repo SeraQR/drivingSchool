@@ -1,8 +1,6 @@
 ﻿import "mainStyle/list";
-import * as _ from "js/main/main";
-import * as co from "js/ajax/coach";
-import * as af from "js/ajax/affiche";
-import * as st from "js/ajax/student";
+import { Main as _ } from "js/main/main";
+import { Student } from "js/ajax/student";
 
 import {
     act,
@@ -26,7 +24,7 @@ function getStudentList() {
     } else {
         ajaxType = "all";
     }
-    const result = st.getStudentList(ajaxType, act, newStudentNum);
+    const result = Student.getStudentList(ajaxType, act, newStudentNum);
     if (result) {
         _.createTable(result);
     } else {

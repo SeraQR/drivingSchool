@@ -1,10 +1,8 @@
 ﻿import "mainStyle/list";
 
-import * as _ from "js/main/main";
+import { Main as _ } from "js/main/main";
 
-import * as co from "js/ajax/coach";
-import * as af from "js/ajax/affiche";
-import * as st from "js/ajax/student";
+import { Coach } from "js/ajax/coach";
 
 import { act } from "js/common/variable";
 $(() => {
@@ -17,7 +15,7 @@ $(() => {
 });
 
 function getCoachList() {
-    const result = co.getAllInformation("all");
+    const result = Coach.getAllInformation("all");
     if (result) {
         _.createTable(result);
     } else {

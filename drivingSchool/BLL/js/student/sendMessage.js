@@ -1,15 +1,15 @@
 ﻿import "formStyle/sendMessage";
-import * as _ from "js/form/form";
-import * as me from "js/ajax/message";
-import * as co from "js/ajax/coach";
+import { Form as _ } from "js/form/form";
+import { Message } from "js/ajax/message";
+import { Coach } from "js/ajax/coach";
 import {
+    userName,
     message,
-    tipMessage
+    tipMessage,tip
 } from "js/common/variable";
 
 let content = "";
 let val = "placeholder";
-const userName = sessionStorage.getItem("sender");
 
 $(() => {
     getCoachName();
@@ -32,7 +32,7 @@ $(() => {
             }, 400 + options * 100);
         }
         if (val !== "placeholder" || prevActive === "placeholder") {
-            if (_.tip.text().indexOf("教练") !== -1) {
+            if (tip.text().indexOf("教练") !== -1) {
                 _.showTip("");
             }
             $(".drop .option").removeClass("active");
@@ -42,7 +42,7 @@ $(() => {
 });
 
 function getCoachName() {
-    const coaches = co.getAllInformation("onlyName");
+    const coaches = Coach.getAllInformation("onlyName");
     if (coaches) {
         const select = $(".drop");
         coaches.forEach((e, index, array) => {
@@ -60,7 +60,7 @@ message.blur(() => {
     } else {
         tipMessage.show("slow");
     }
-    if (_.tip.text().indexOf("消息") !== -1) {
+    if (tip.text().indexOf("消息") !== -1) {
         _.showTip("");
     }
 });
@@ -81,7 +81,7 @@ function send() {
         _.showTip("请输入消息内容！");
     } else {
         _.showTip("");
-        if (me.insertMessage(userName, content, val)) {
+        if (Message.insertMessage(userName, content, val)) {
             _.showTip("发送成功！");
         } else {
             _.showTip("因不可抗拒因素，发送失败！");

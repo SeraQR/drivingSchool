@@ -1,6 +1,6 @@
 ﻿import "formStyle/changeInfo";
-import * as _ from "js/form/form";
-import * as ac from "js/ajax/account";
+import { Form as _ } from "js/form/form";
+import { Account } from "js/ajax/account";
 import {
     address,
     description,
@@ -52,7 +52,7 @@ function changeInfo() {
     if (!_.allHaveContent(user)) {
         _.showTip("不能有空值！");
     } else {
-        if (ac.changeInfo(isCoach ? "coach" : "student", user)) {
+        if (Account.changeInfo(isCoach ? "coach" : "student", user)) {
             _.showTip("修改成功！");
             setTimeout(() => location.href = `../${user.isCoach ? "coach/coach" : "student/student"}.html`, 800);
         } else {

@@ -1,16 +1,12 @@
 ﻿import "mainStyle/list";
 
-import * as _ from "js/main/main";
+import { Main as _ } from "js/main/main";
+import { Message } from "js/ajax/message";
 
-import * as af from "js/ajax/affiche";
-import * as st from "js/ajax/student";
-import * as me from "js/ajax/message";
+import { act,userName } from "js/common/variable";
 
-import { act } from "js/common/variable";
-
-let userName = "";
 function getMessageList() {
-    let result = me.getSentMessage(userName);
+    let result = Message.getSentMessage(userName);
     if (result) {
         _.createTable(result);
     } else {
@@ -19,7 +15,7 @@ function getMessageList() {
 }
 $(() => {
     Promise.all([
-        userName = _.getPersonalInformation(act)[0],
+        _.getPersonalInformation(act),
         _.getAffiche(),
         getMessageList()
     ]).then(_.Init).then(_.fixedTHeader);

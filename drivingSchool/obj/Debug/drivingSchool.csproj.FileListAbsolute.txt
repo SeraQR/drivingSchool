@@ -30,3 +30,4 @@ C:\Users\Simon\Desktop\drivingSchool\drivingSchool\bin\drivingSchool.pdb
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.csproj.CoreCompileInputs.cache
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.dll
 C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.pdb
+C:\Users\Simon\Desktop\drivingSchool\drivingSchool\obj\Debug\drivingSchool.csprojResolveAssemblyReference.cache

@@ -1,93 +1,105 @@
 ﻿import "mainStyle/onlineExam";
-import * as _ from "js/main/main";
-import * as f from "js/form/form";
-import { problem } from "js/main/exam";
+import {
+    Main as _
+} from "js/main/main";
+import {
+    Form
+} from "js/form/form";
+import {
+    problem
+} from "js/main/exam";
+import {
+    OldTureNum,
+    NowTureNum,
+    DQuestion,
+    optionA,
+    optionB,
+    optionC,
+    optionD,
+    radio
+} from "js/common/variable";
 
-const question = $(".question");
-const optionA = $(".optionA");
-const optionB = $(".optionB");
-const optionC = $(".optionC");
-const optionD = $(".optionD");
-
-let answer = "";
-let nowTure = 0;
-let oldTure;
-let index = 0;
+let answer = "",
+    nowTure = 0,
+    oldTure = 0,
+    index = 0,
+    toBeNo1 = false;
 
 $(() => {
     Promise.all([getOldTure(), loadQuestion()]).then(_.Init);
 });
-
-function loadQuestion() {
-    question.text(problem[index].question);
-    optionA.text(problem[index].optionA);
-    optionB.text(problem[index].optionB);
-    optionC.text(problem[index].optionC);
-    optionD.text(problem[index].optionD);
+radio.click(SelectionRadio);
+function SelectionRadio(){
+    if (!problem[index].submitted) {
+        Form.showTip("");
+        radio.removeClass("checked");
+        const data = $(this).attr("value");
+        const I = $(`.option_${ data.toLowerCase()}`);
+        I.addClass("checked");
+        if (I.prop("checked")) {
+            answer = data;
+        }
+    }
 }
-
 function getOldTure() {
     oldTure = localStorage.getItem("oldTure");
     if (!oldTure) {
         oldTure = 0;
         localStorage.setItem("oldTure", oldTure);
     }
-    $("#oldTureNum").text(oldTure);
+    OldTureNum.text(oldTure);
 }
 
-$("input[type='radio']").click(addSelection);
-
-function addSelection() {
-    if (!problem[index].submitted) {
-        f.showTip("");
-        $("input[type='radio']").removeClass("checked");
-        const data = this.getAttribute("data-value");
-        const I = $(`.option_${ data.toLowerCase()}`);
-        I.addClass("checked");
-
-        if (I.prop("checked")) {
-            answer = data;
-        }
-    }
-    return false;
+function loadQuestion() {
+    DQuestion.text(problem[index].question);
+    optionA.text(problem[index].optionA);
+    optionB.text(problem[index].optionB);
+    optionC.text(problem[index].optionC);
+    optionD.text(problem[index].optionD);
 }
+
 
 $("#sure").click(() => {
     if (problem[index].submitted) {
-        f.showTip("您已提交过了");
+        Form.showTip("您已提交过了");
     } else if (answer === "") {
-        f.showTip("请选择一个选项！");
+        Form.showTip("请选择一个选项！");
     } else {
         problem[index].submitted = true;
         if (answer !== problem[index].answer) {
-            f.showTip(problem[index].tip);
+            Form.showTip(problem[index].tip);
         } else {
             problem[index].isTure = true;
-            f.showTip("恭喜您，答对了！");
+            Form.showTip("恭喜您，答对了！");
             nowTure++;
             if (nowTure > oldTure) {
+                if (!toBeNo1) {
+                    toBeNo1 = true;
+                    Form.showTip("恭喜您，成为了答题史的第一人！");
+                }
                 oldTure = nowTure;
-                $("#oldTureNum").text(oldTure);
+                OldTureNum.text(oldTure);
                 localStorage.setItem("oldTure", oldTure);
             }
-            $("#nowTureNum").text(nowTure);
+
+            NowTureNum.text(nowTure);
         }
         $(`.option${ problem[index].answer}`).css("color", "green");
     }
 });
 
 function Init() {
-    f.showTip("");
+    Form.showTip("");
     answer = "";
-    $("input[type='radio']").removeClass("checked");
+    radio.removeClass("checked");
     $(".option").attr("style", "");
     if (problem[index].submitted) {
         $(`.option${ problem[index].answer}`).css("color", "green");
         $(`.option_${ problem[index].answer.toLowerCase()}`).addClass("checked");
         if (problem[index].isTure) {
-            f.showTip("恭喜您，答对了！");
+            Form.showTip("恭喜您，答对了！");
         } else {
-            f.showTip(problem[index].tip);
+            Form.showTip(problem[index].tip);
         }
     }
 }
