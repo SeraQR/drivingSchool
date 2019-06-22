@@ -1,93 +1,100 @@
 .hoverLine(@color: #2094c4) {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: @color;
-        visibility: hidden;
-        .transform(scaleX(0));
-        .transition(.4s);
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: @color;
+		visibility: hidden;
+		.transform(scaleX(0));
+		.transition(0.4s);
+	}
 
-    &:hover {
-        text-decoration: none;
-    }
+	&:hover {
+		text-decoration: none;
+	}
 
-    &:hover::after,
-    &:active::after {
-        visibility: visible;
-        .transform(scaleX(1));
-    }
+	&:hover::after,
+	&:active::after {
+		visibility: visible;
+		.transform(scaleX(1));
+	}
 }
 
-
-
 .hoverAnchor(@anchorColor: #3498db) {
-    position: relative;
-    white-space: normal;
-    background: transparent;
-    text-decoration: none;
+	position: relative;
+	white-space: normal;
+	background: transparent;
+	text-decoration: none;
 
-    &:after {
-        position: absolute;
-        bottom: -0.0625rem;
-        left: 100%;
-        width: 0;
-        content: "";
-        -webkit-transition: width 350ms, left 350ms;
-        transition: width 350ms, left 350ms;
-        border-bottom: .0625rem solid @anchorColor;
-    }
+	&:after {
+		position: absolute;
+		bottom: -0.0625rem;
+		left: 100%;
+		width: 0;
+		content: '';
+		-webkit-transition: width 350ms, left 350ms;
+		transition: width 350ms, left 350ms;
+		border-bottom: 0.0625rem solid @anchorColor;
+	}
 
-    &:hover:after {
-        left: 0;
-        width: 100%;
-        -webkit-transition: width 350ms;
-        transition: width 350ms;
-        text-decoration: underline;
-        outline: 0;
-    }
+	&:hover:after {
+		left: 0;
+		width: 100%;
+		-webkit-transition: width 350ms;
+		transition: width 350ms;
+		text-decoration: underline;
+		outline: 0;
+	}
 }
 
 .aTitle {
-    letter-spacing: 4px;
-    color: @titleColor;
-    font-weight: 300;
-    text-decoration: none;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    text-shadow: rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 2px;
-    font-family: @font-custom;
+	letter-spacing: 4px;
+	color: @titleColor;
+	font-weight: 300;
+	text-decoration: none;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	text-shadow: rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px,
+		rgb(255, 255, 251) 0px 0px 2px;
+	font-family: @font-custom;
 
-    &:hover {
-        color: @titleHoverColor;
-        -webkit-animation: jumpWhite 1.5s ease-in-out infinite alternate;
-        animation: jumpWhite 1.5s ease-in-out infinite alternate;
-    }
+	&:hover {
+		color: @titleHoverColor;
+		-webkit-animation: jumpWhite 1.5s ease-in-out infinite alternate;
+		animation: jumpWhite 1.5s ease-in-out infinite alternate;
+	}
 }
 
 @-webkit-keyframes jumpWhite {
-    from {
-        text-shadow: 0 0 1px @titleHoverColor, 0 0 2px @titleHoverColor, 0 0 3px @titleHoverColor, 0 0 5px @titleColor, 0 0 8px @titleColor, 0 0 9px @titleColor, 0 0 10px @titleColor, 0 0 15px @titleColor;
-    }
+	from {
+		text-shadow: 0 0 1px @titleHoverColor, 0 0 2px @titleHoverColor,
+			0 0 3px @titleHoverColor, 0 0 5px @titleColor, 0 0 8px @titleColor,
+			0 0 9px @titleColor, 0 0 10px @titleColor, 0 0 15px @titleColor;
+	}
 
-    to {
-        text-shadow: 0 0 .5px @titleHoverColor, 0 0 1px @titleHoverColor, 0 0 1.5px @titleHoverColor, 0 0 2px @titleColor, 0 0 4px @titleColor, 0 0 5px @titleColor, 0 0 6px @titleColor, 0 0 8px @titleColor;
-    }
+	to {
+		text-shadow: 0 0 0.5px @titleHoverColor, 0 0 1px @titleHoverColor,
+			0 0 1.5px @titleHoverColor, 0 0 2px @titleColor, 0 0 4px @titleColor,
+			0 0 5px @titleColor, 0 0 6px @titleColor, 0 0 8px @titleColor;
+	}
 }
 
 @keyframes jumpWhite {
-    from {
-        text-shadow: 0 0 1px @titleHoverColor, 0 0 2px @titleHoverColor, 0 0 3px @titleHoverColor, 0 0 5px @titleColor, 0 0 8px @titleColor, 0 0 9px @titleColor, 0 0 10px @titleColor, 0 0 15px @titleColor;
-    }
+	from {
+		text-shadow: 0 0 1px @titleHoverColor, 0 0 2px @titleHoverColor,
+			0 0 3px @titleHoverColor, 0 0 5px @titleColor, 0 0 8px @titleColor,
+			0 0 9px @titleColor, 0 0 10px @titleColor, 0 0 15px @titleColor;
+	}
 
-    to {
-        text-shadow: 0 0 .5px @titleHoverColor, 0 0 1px @titleHoverColor, 0 0 1.5px @titleHoverColor, 0 0 2px @titleColor, 0 0 4px @titleColor, 0 0 5px @titleColor, 0 0 6px @titleColor, 0 0 8px @titleColor;
-    }
+	to {
+		text-shadow: 0 0 0.5px @titleHoverColor, 0 0 1px @titleHoverColor,
+			0 0 1.5px @titleHoverColor, 0 0 2px @titleColor, 0 0 4px @titleColor,
+			0 0 5px @titleColor, 0 0 6px @titleColor, 0 0 8px @titleColor;
+	}
 }

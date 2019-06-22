@@ -46,7 +46,7 @@
 .tgl + .tgl-btn:before {
 	position: relative;
 	display: block;
-	content: "";
+	content: '';
 	width: 50%;
 	height: 100%;
 }
@@ -67,16 +67,18 @@
 	background: #fbfbfb;
 	border-radius: 2em;
 	padding: 2px;
-	-webkit-transition: all .4s ease;
-	transition: all .4s ease;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
 	border: 1px solid #e8eae9;
 }
 
 .tgl-ios + .tgl-btn:after {
 	border-radius: 2em;
 	background: #fbfbfb;
-	-webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
-	transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+	-webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		padding 0.3s ease, margin 0.3s ease;
+	transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		padding 0.3s ease, margin 0.3s ease;
 	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
 }
@@ -87,7 +89,7 @@
 }
 
 .tgl-ios + .tgl-btn:active:after {
-	padding-right: .8em;
+	padding-right: 0.8em;
 }
 
 .tgl-ios:checked + .tgl-btn {
@@ -100,10 +102,11 @@
 }
 
 .tgl-ios:checked + .tgl-btn:active:after {
-	margin-left: -.8em;
+	margin-left: -0.8em;
 }
 
-.tgl-ios, .tgl-btn {
+.tgl-ios,
+.tgl-btn {
 	transform: translateX(68px) translateY(-2px) scale(0.8);
 
 	&:last-child {

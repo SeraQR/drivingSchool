@@ -1,20 +1,9 @@
 ﻿// font
-@font: "Helvetica Neue",
-Helvetica,
-Arial,
-"Microsoft Yahei",
-sans-serif;
-@font-custom: "Comic Sans MS",
-"Helvetica Neue",
-"Microsoft Yahei",
-"Microsoft Yahei",
--apple-system,
-sans-serif;
-@font-content: "Helvetica Neue",
-"Microsoft Yahei",
-"Microsoft Yahei",
--apple-system,
-sans-serif;
+@font: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
+@font-custom: 'Comic Sans MS', 'Helvetica Neue', 'Microsoft Yahei',
+	'Microsoft Yahei', -apple-system, sans-serif;
+@font-content: 'Helvetica Neue', 'Microsoft Yahei', 'Microsoft Yahei',
+	-apple-system, sans-serif;
 @font-size: 15px; // color
 @lightPrimaryColor: #c5cae9;
 @textPrimaryColor: #fff;
@@ -26,29 +15,36 @@ sans-serif;
 @codeBg: #f6f6f6;
 @titleColor: #333;
 @titleHoverColor: #fff; //layout
-@boxShadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
-@textShadow: rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 2px,
-0 2px 10px 0 rgba(0, 0, 0, .12);
-@bg-header: linear-gradient(-90deg, #77ACDC 0%, #77AAFF 100%);
-@bg-content-header: linear-gradient(0deg, #F5F1F1 0%, #77AAFF 100%);
-@bg-main: linear-gradient(180deg, #F5F1F1 30%, rgb(239, 241, 243) 45%, rgb(247, 244, 238) 71%, #EFEFEF 91%);
-@bg-brand: linear-gradient(0deg, #F5F1F1 0%, #77AAFF 100%);
+@boxShadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+@textShadow: rgb(69, 45, 45) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px,
+	rgb(255, 255, 251) 0px 0px 2px, 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+@bg-header: linear-gradient(-90deg, #77acdc 0%, #77aaff 100%);
+@bg-content-header: linear-gradient(0deg, #f5f1f1 0%, #77aaff 100%);
+@bg-main: linear-gradient(
+	180deg,
+	#f5f1f1 30%,
+	rgb(239, 241, 243) 45%,
+	rgb(247, 244, 238) 71%,
+	#efefef 91%
+);
+@bg-brand: linear-gradient(0deg, #f5f1f1 0%, #77aaff 100%);
 .transition(@s, @dur: ease-in-out) {
-    -webkit-transition: @s @dur;
-    transition: @s @dur;
+	-webkit-transition: @s @dur;
+	transition: @s @dur;
 }
 .transform(@prop) {
-    -webkit-transform: @prop;
-    transform: @prop;
+	-webkit-transform: @prop;
+	transform: @prop;
 }
 
-.boxShadow(@s: .4s) {
-    -webkit-box-shadow: @boxShadow;
-    box-shadow: @boxShadow;
-    .transition(@s);
-    &:hover,
-    &:active {
-        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .2), 0 4px 15px rgba(0, 0, 0, .2);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, .2), 0 4px 15px rgba(0, 0, 0, .2);
-    }
+.boxShadow(@s: 0.4s) {
+	-webkit-box-shadow: @boxShadow;
+	box-shadow: @boxShadow;
+	.transition(@s);
+	&:hover,
+	&:active {
+		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2),
+			0 4px 15px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2);
+	}
 }

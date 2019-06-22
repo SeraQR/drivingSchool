@@ -1,31 +1,31 @@
 ﻿*,
 *::before,
 *::after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-    background-color: @backColor;
-    line-height: 1.5;
-    overflow-x: hidden;
+	background-color: @backColor;
+	line-height: 1.5;
+	overflow-x: hidden;
 }
 
 body {
-    line-height: 1;
-    color: #000;
-    font: normal @font-size @font-content;
-    width: 100%;
-    overflow: hidden;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    -webkit-overflow-scrolling: touch;
+	line-height: 1;
+	color: #000;
+	font: normal @font-size @font-content;
+	width: 100%;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-overflow-scrolling: touch;
 }
 
 html,
 body {
-    position: relative;
-    min-height: 100%;
-    height: 100%;
+	position: relative;
+	min-height: 100%;
+	height: 100%;
 }
 
 html,
@@ -106,9 +106,9 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 article,
@@ -122,34 +122,34 @@ hgroup,
 menu,
 nav,
 section {
-    display: block
+	display: block;
 }
 
 ol,
 ul {
-    list-style: none
+	list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none
+	quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none
+	content: '';
+	content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 :focus {
-    outline: 0
+	outline: 0;
 }
 
 h1,
@@ -158,44 +158,46 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: normal
+	font-weight: normal;
 }
 
 input {
-    -webkit-appearance: none;
-    border-radius: 0
+	-webkit-appearance: none;
+	border-radius: 0;
 }
 
 a {
-    color: #2094c4;
-    text-decoration: none;
-    outline: none;
-    background-color: transparent;
-    background-image: none;
+	color: #2094c4;
+	text-decoration: none;
+	outline: none;
+	background-color: transparent;
+	background-image: none;
 
-    &:hover {
-        color: #3498db
-    }
+	&:hover {
+		color: #3498db;
+	}
 }
 
 p {
-    padding: 0 0 20px
+	padding: 0 0 20px;
 }
 
 strong {
-    font-weight: bold
+	font-weight: bold;
 }
 
 ::-moz-selection {
-    background: #6AAFE6;
-    color: #f6f6f6;
-    text-shadow: rgb(187, 186, 186) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 2px;
+	background: #6aafe6;
+	color: #f6f6f6;
+	text-shadow: rgb(187, 186, 186) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px,
+		rgb(255, 255, 251) 0px 0px 2px;
 }
 
 ::selection {
-    background: #6AAFE6;
-    color: #f6f6f6;
-    text-shadow: rgb(187, 186, 186) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 2px;
+	background: #6aafe6;
+	color: #f6f6f6;
+	text-shadow: rgb(187, 186, 186) 0px 0px 1px, rgb(255, 255, 251) 0px 0px 1px,
+		rgb(255, 255, 251) 0px 0px 2px;
 }
 
 body,
@@ -204,7 +206,7 @@ button,
 textarea,
 select,
 option {
-    font: normal 1em @font;
+	font: normal 1em @font;
 }
 
 body,
@@ -222,9 +224,9 @@ dd,
 blockquote,
 button,
 input {
-    margin: 0;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: subpixel-antialiased;
+	margin: 0;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 input,
@@ -232,68 +234,68 @@ legend,
 input,
 textarea,
 button {
-    padding: 0;
+	padding: 0;
 }
 
 form,
 fieldset,
 th,
 td {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 ol,
 ul {
-    margin: 12px 0;
-    padding: 0 0 0 32px;
+	margin: 12px 0;
+	padding: 0 0 0 32px;
 
-    &.reset {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+	&.reset {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 }
 
 ol ol,
 ol ul,
 ul ol,
 ul ul {
-    margin-top: 0;
-    margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 p {
-    margin: 12px 0;
+	margin: 12px 0;
 }
 
 small {
-    font-size: 75%;
-    line-height: 1;
+	font-size: 75%;
+	line-height: 1;
 }
 
 main {
-    display: block
+	display: block;
 }
 
 template {
-    display: none
+	display: none;
 }
 
 img {
-    max-width: 100%;
-    border: none;
+	max-width: 100%;
+	border: none;
 }
 
 img,
 input,
 button,
 label {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 i {
-    font-style: normal;
+	font-style: normal;
 }
 
 h1,
@@ -302,86 +304,86 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 400;
+	font-weight: 400;
 }
 
 h1,
 .h1 {
-    font-size: 44px;
-    line-height: 48px;
+	font-size: 44px;
+	line-height: 48px;
 }
 
 h2,
 .h2 {
-    font-size: 34px;
-    line-height: 40px;
+	font-size: 34px;
+	line-height: 40px;
 }
 
 h3,
 .h3 {
-    font-size: 24px;
-    line-height: 32px;
+	font-size: 24px;
+	line-height: 32px;
 }
 
 h4,
 .h4 {
-    font-size: 20px;
-    line-height: 28px;
+	font-size: 20px;
+	line-height: 28px;
 }
 
 h5,
 .h5 {
-    font-size: 16px;
-    line-height: 24px;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 h6,
 .h6 {
-    font-size: 12px;
-    line-height: 20px;
+	font-size: 12px;
+	line-height: 20px;
 }
 
-input[type="button"],
-input[type="submit"],
-input[type="search"],
-input[type="reset"] {
-    -webkit-appearance: button;
+input[type='button'],
+input[type='submit'],
+input[type='search'],
+input[type='reset'] {
+	-webkit-appearance: button;
 }
 
 input:focus,
 select:focus,
 button:focus,
 textarea:focus {
-    outline: none;
+	outline: none;
 }
 
 textarea {
-    resize: none;
+	resize: none;
 }
 
 body {
-    cursor: url('../../../../Data/img/default.cur'), auto !important;
+	cursor: url('../../../../Data/img/default.cur'), auto !important;
 }
 
 a,
 button,
-input[type="button"],
-input[type="submit"],
-input[type="search"],
-input[type="reset"],
-input[type="checkbox"] {
-    cursor: url('../../../../Data/img/pointer.cur'), auto !important;
+input[type='button'],
+input[type='submit'],
+input[type='search'],
+input[type='reset'],
+input[type='checkbox'] {
+	cursor: url('../../../../Data/img/pointer.cur'), auto !important;
 }
 
-img{
-    cursor:-webkit-zoom-in;
-    cursor:zoom-in;
+img {
+	cursor: -webkit-zoom-in;
+	cursor: zoom-in;
 }
-body >img{
-    cursor:-webkit-zoom-out;
-    cursor:zoom-out;
+body > img {
+	cursor: -webkit-zoom-out;
+	cursor: zoom-out;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-} 
+	width: 6px;
+}
